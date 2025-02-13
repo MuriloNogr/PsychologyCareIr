@@ -1,12 +1,7 @@
-import { NextConfig } from "next";
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    output: "export",
-    images: {
-        unoptimized: true,
-    },
-    basePath: "/PsychologyCareIr",
-    assetPrefix: "/psychologycare/",
+  /* config options here */
 };
 
 export default nextConfig;

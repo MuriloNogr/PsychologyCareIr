@@ -1,5 +1,6 @@
 @import "./tailwind.css";
 
-footer {
+
+.footer {
     @apply bg-gradient-to-r from-[#D58D9F] to-[#B2677C] py-4 shadow-md;
 }

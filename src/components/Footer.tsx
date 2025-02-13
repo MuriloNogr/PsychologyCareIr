@@ -2,8 +2,11 @@ import "@/styles/footer.css";
 
 const Footer = () => {
     return (
-        <footer>
-            <p>© 2025 Psychology Care</p>
+        <footer className="footer">
+            <div className="footer-container">
+                <p>© 2025 Psychology Care</p>
+
+            </div>
         </footer>
     );
 };
