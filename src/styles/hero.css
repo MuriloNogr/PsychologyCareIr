@@ -26,8 +26,8 @@
 }
 
 .hero-btn {
-    @apply bg-gradient-to-r from-[#b2c4fd] to-[#3a385d] text-white px-6 py-3 rounded-lg shadow-lg
-    hover:bg-[#2e8b6a] transition;
+    @apply bg-[#b2c4fd] text-white px-6 py-3 rounded-lg shadow-lg
+    hover:bg-[#3a385d] transition;
 }
 
 .hero-image {
