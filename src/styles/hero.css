@@ -1,0 +1,35 @@
+@import "./tailwind.css";
+
+.hero {
+    @apply relative w-full h-screen flex items-center bg-white;
+}
+
+.hero-container {
+    @apply container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 pb-[17%];
+}
+
+.hero-text {
+    @apply max-w-xl text-left space-y-6;
+}
+
+.hero-text h1 {
+    @apply text-5xl font-bold text-[#1F2937] leading-tight;
+}
+
+.hero-text p {
+    @apply text-lg text-gray-600;
+}
+
+/* Adicionado espaçamento correto no botão */
+.hero-btn-container {
+    @apply mt-6; /* Cria espaço entre o texto e o botão */
+}
+
+.hero-btn {
+    @apply bg-gradient-to-r from-[#b2c4fd] to-[#3a385d] text-white px-6 py-3 rounded-lg shadow-lg
+    hover:bg-[#2e8b6a] transition;
+}
+
+.hero-image {
+    @apply mt-10 lg:mt-0 drop-shadow-lg;
+}

@@ -1,0 +1,25 @@
+@import "./tailwind.css";
+
+.header {
+    @apply bg-gradient-to-r from-[#D58D9F] to-[#B2677C] py-4 shadow-md;
+}
+
+.header-container {
+    @apply container mx-auto flex justify-between items-center px-6;
+}
+
+.logo img {
+    @apply h-12;
+}
+
+.nav-links {
+    @apply flex space-x-6 text-white font-medium;
+}
+
+.nav-links a {
+    @apply hover:text-gray-200 transition-colors;
+}
+
+.header-title {
+    @apply text-white text-3xl font-bold; /* A fonte Lily Script One será aplicada dinamicamente */
+}

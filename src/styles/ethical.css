@@ -1,0 +1,33 @@
+@import "./tailwind.css";
+
+.ethical-section {
+    @apply py-16 px-6 bg-white text-black;
+}
+
+.ethical-container {
+    @apply max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12;
+}
+
+.ethical-text {
+    @apply flex-1;
+}
+
+.ethical-title {
+    @apply text-3xl font-bold mb-6;
+}
+
+.ethical-item {
+    @apply block bg-white border border-gray-300 rounded-lg p-6 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg cursor-pointer mb-6; /* Aumentei de mb-6 para mb-8 */
+}
+
+.ethical-subtitle {
+    @apply text-xl font-semibold mb-2;
+}
+
+.ethical-item p {
+    @apply text-gray-700;
+}
+
+.ethical-image {
+    @apply flex-1 flex justify-end;
+}

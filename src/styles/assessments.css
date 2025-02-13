@@ -1,0 +1,33 @@
+@import "./tailwind.css";
+
+.assessments-section {
+    @apply py-16 px-6 bg-white text-black;
+}
+
+.assessments-title {
+    @apply text-3xl font-bold mb-8;
+}
+
+.assessments-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+
+.assessment-card {
+    @apply bg-white border border-gray-300 rounded-lg shadow-lg p-6 flex flex-col transition-transform duration-300 transform hover:-translate-y-2 hover:shadow-xl cursor-pointer;
+}
+
+.assessment-image {
+    @apply flex justify-center mb-4;
+}
+
+.assessment-img {
+    @apply object-contain w-auto h-auto;
+}
+
+.assessment-title {
+    @apply text-xl font-semibold mb-2 text-left;
+}
+
+.assessment-description {
+    @apply text-gray-700 text-left;
+}
