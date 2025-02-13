@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-white text-center py-6">
+        <footer>
             <p>© 2025 Psychology Care</p>
         </footer>
     );
