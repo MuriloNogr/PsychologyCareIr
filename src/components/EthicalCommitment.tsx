@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import "@/styles/ethical.css"; // Arquivo de estilos atualizado
+import { Noto_Sans } from "next/font/google";
+
+const notoSans = Noto_Sans({
+    subsets: ["latin"],
+    weight: "800",
+    display: "swap",
+});
 
 const ethicalTopics = [
     {
@@ -29,7 +36,7 @@ const EthicalCommitment = () => {
             <div className="ethical-container">
                 {/* Texto */}
                 <div className="ethical-text">
-                    <h2 className="ethical-title">Ethical Commitment</h2>
+                    <h2 className={`ethical-title ${notoSans.className}`}>ETHICAL COMMITMENT</h2>
 
                     {ethicalTopics.map((item, index) => (
                         <Link key={index} href={item.link} className="ethical-item">

@@ -1,0 +1,37 @@
+@import "./tailwind.css";
+
+.team-section {
+    @apply py-16 px-6 bg-white text-black;
+}
+
+.team-title {
+    @apply text-3xl font-bold text-center mb-8;
+}
+
+.team-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+}
+
+.team-card {
+    @apply bg-white border border-gray-300 rounded-lg shadow-lg p-6 flex flex-col items-center text-center transition-transform duration-300 transform hover:-translate-y-2 hover:shadow-xl cursor-pointer;
+}
+
+.team-image {
+    @apply w-36 h-36 bg-gray-300 rounded-lg flex justify-center items-center mb-4;
+}
+
+.team-img {
+    @apply object-contain w-auto h-auto;
+}
+
+.team-info {
+    @apply text-left w-full;
+}
+
+.team-name {
+    @apply text-xl font-semibold text-center;
+}
+
+.team-description {
+    @apply text-gray-700 text-center mt-2;
+}

@@ -1,14 +1,21 @@
+import { Noto_Sans } from "next/font/google";
 import Image from "next/image";
 import "@/styles/hero.css";
+
+// Importando a fonte otimizada do Google Fonts
+const notoSans = Noto_Sans({
+    subsets: ["latin"],
+    weight: "800",
+    display: "swap",
+});
 
 const Hero = () => {
     return (
         <section className="hero">
             <div className="hero-container">
-
                 {/* Texto */}
                 <div className="hero-text">
-                    <h1>Psychology Care Ireland</h1>
+                    <h1 className={`hero-title ${notoSans.className}`}>PSYCHOLOGY CARE IRELAND</h1>
                     <p>
                         We provide specialized assessment services in clinical psychology, focusing on emotional, behavioral,
                         and psychological well-being; clinical neuropsychology, evaluating cognitive functions such as memory,
@@ -24,7 +31,6 @@ const Hero = () => {
                 <div className="hero-image">
                     <Image src="/ImagePlaceholder.png" alt="Consultório de Psicologia" width={512} height={0} />
                 </div>
-
             </div>
         </section>
     );

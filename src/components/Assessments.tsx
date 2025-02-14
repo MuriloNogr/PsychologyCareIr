@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import "@/styles/assessments.css"; // Arquivo de estilos separado
+import { Noto_Sans } from "next/font/google";
+
+const notoSans = Noto_Sans({
+    subsets: ["latin"],
+    weight: "800",
+    display: "swap",
+});
 
 const assessments = [
     {
@@ -29,7 +36,7 @@ const assessments = [
 const Assessments = () => {
     return (
         <section className="assessments-section">
-            <h2 className="assessments-title">Assessments provided</h2>
+            <h2 className={`assessments-title ${notoSans.className}`}>ASSESSMENTS PROVIDED</h2>
             <div className="assessments-grid">
                 {assessments.map((item, index) => (
                     <Link key={index} href={item.link} className="assessment-card">
