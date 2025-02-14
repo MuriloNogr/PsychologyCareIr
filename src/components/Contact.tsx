@@ -1,12 +1,3 @@
-import { Noto_Sans } from "next/font/google";
-
-const notoSans = Noto_Sans({
-    subsets: ["latin"],
-    weight: "800",
-    display: "swap",
-});
-
-
 const Contact = () => {
     return (
         <section className="py-16 px-4">
