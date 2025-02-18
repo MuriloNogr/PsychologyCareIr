@@ -73,7 +73,7 @@ const Assessments = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="assessments-section">
+        <section ref={sectionRef} id="assessments" className="assessments-section">
             <h2 className={`assessments-title ${notoSans.className}`}>ASSESSMENTS PROVIDED</h2>
             <div className="assessments-grid">
                 {assessments.map((item, index) => (

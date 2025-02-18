@@ -2,7 +2,6 @@ import { Noto_Sans } from "next/font/google";
 import Image from "next/image";
 import "@/styles/hero.css";
 
-// Importando a fonte otimizada do Google Fonts
 const notoSans = Noto_Sans({
     subsets: ["latin"],
     weight: "800",
@@ -23,7 +22,7 @@ const Hero = () => {
                         writing, comprehension, and mathematical reasoning to identify unique learning needs and challenges.
                     </p>
                     <div className="hero-btn-container">
-                        <a href="#contact" className="hero-btn">Contact us</a>
+                        <a href="#assessments" className="hero-btn">See more</a>
                     </div>
                 </div>
 

@@ -2,6 +2,7 @@
 
 .ethical-section {
     @apply py-16 px-6 bg-white text-black;
+    @apply relative w-full h-screen;
 }
 
 .ethical-container {

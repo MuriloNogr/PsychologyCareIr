@@ -45,10 +45,7 @@
     @apply mt-6;
 }
 
+/* Estilização do botão */
 .hero-btn {
-    @apply bg-[#d58d9f] text-white px-6 py-3 rounded-lg shadow-lg hover:bg-[#3a385d] transition;
-}
-
-.hero-image {
-    @apply mt-10 lg:mt-0 drop-shadow-lg;
+    @apply bg-[#d58d9f] text-white px-6 py-3 rounded-lg shadow-lg hover:bg-[#3a385d] transition cursor-pointer;
 }
