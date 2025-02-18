@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
     const [scrolled, setScrolled] = useState(false);
@@ -19,7 +18,6 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
         <div className={scrolled ? "scrolled" : ""}>
             <Header />
             <main>{children}</main>
-            {/*<Footer />*/}
         </div>
     );
 };
