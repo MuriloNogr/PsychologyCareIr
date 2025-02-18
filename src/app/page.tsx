@@ -12,8 +12,8 @@ export default function Home() {
   return (
       <div>
         <Header />
+          <Hero />
         <Content>
-            <Hero />
             <Assessments />
             <EthicalCommitment />
             <Team />

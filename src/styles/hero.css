@@ -1,11 +1,31 @@
 @import "./tailwind.css";
 
 .hero {
-    @apply relative w-full h-screen flex items-center bg-white;
+    @apply relative w-full h-screen flex items-center;
+    background: url('/banner.jpeg') center/cover no-repeat;
+    position: relative;
 }
 
+/* Efeito de fade entre hero e header */
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+}
+
+/* Estiliza o container interno */
 .hero-container {
-    @apply container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 pb-[17%];
+    @apply container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 pb-[0%];
+}
+
+/* Quando a classe .scrolled for ativada, o bg some */
+.hero.scrolled {
+    background-image: none;
+    @apply bg-white text-black transition-all duration-500;
 }
 
 .hero-text {
@@ -22,12 +42,11 @@
 
 /* Adicionado espaçamento correto no botão */
 .hero-btn-container {
-    @apply mt-6; /* Cria espaço entre o texto e o botão */
+    @apply mt-6;
 }
 
 .hero-btn {
-    @apply bg-[#b2c4fd] text-white px-6 py-3 rounded-lg shadow-lg
-    hover:bg-[#3a385d] transition;
+    @apply bg-[#b2c4fd] text-white px-6 py-3 rounded-lg shadow-lg hover:bg-[#3a385d] transition;
 }
 
 .hero-image {
