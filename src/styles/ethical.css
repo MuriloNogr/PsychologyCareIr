@@ -17,17 +17,46 @@
 }
 
 .ethical-item {
-    @apply block bg-white border border-gray-300 rounded-lg p-6 transition-transform duration-300 transform hover:-translate-y-1 hover:shadow-lg cursor-pointer mb-6; /* Aumentei de mb-6 para mb-8 */
+    @apply block bg-white border border-gray-300 rounded-lg p-6 relative overflow-hidden
+    transition-transform duration-300 transform cursor-pointer mb-6;
 }
 
+/* Título */
 .ethical-subtitle {
     @apply text-xl font-semibold mb-2;
 }
 
+/* Descrição */
 .ethical-item p {
     @apply text-gray-700;
 }
 
-.ethical-image {
-    @apply flex-1 flex justify-end;
+/* See more */
+.see-more {
+    @apply absolute bottom-4 right-4 text-[#3a385d] font-semibold text-sm opacity-0 transition-opacity duration-300;
+}
+
+/* Setinha */
+.arrow {
+    @apply inline-block transition-transform duration-300;
+}
+
+/* Animação inicial ao entrar na tela */
+.ethical-item.animate-once {
+    @apply -translate-y-1 shadow-lg transition-all duration-500;
+}
+
+/* Mantém hover funcionando normalmente após a animação */
+.ethical-item:hover {
+    @apply -translate-y-1 shadow-lg;
+}
+
+.ethical-item:hover .see-more,
+.ethical-item.animate-once .see-more {
+    @apply opacity-100;
+}
+
+.ethical-item:hover .arrow,
+.ethical-item.animate-once .arrow {
+    transform: translateX(4px);
 }

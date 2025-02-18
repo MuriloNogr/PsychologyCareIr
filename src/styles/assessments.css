@@ -13,9 +13,11 @@
 }
 
 .assessment-card {
-    @apply bg-white border border-gray-300 rounded-lg shadow-lg p-6 flex flex-col transition-transform duration-300 transform hover:-translate-y-2 hover:shadow-xl cursor-pointer;
+    @apply bg-white border border-gray-300 rounded-lg shadow-lg p-6 flex flex-col relative overflow-hidden
+    transition-transform duration-300 transform cursor-pointer;
 }
 
+/* Imagem */
 .assessment-image {
     @apply flex justify-center mb-4;
 }
@@ -24,10 +26,46 @@
     @apply object-contain w-auto h-auto;
 }
 
+/* Título */
 .assessment-title {
     @apply text-xl font-semibold mb-2 text-left;
 }
 
+/* Descrição */
 .assessment-description {
     @apply text-gray-700 text-left;
+}
+
+/* See more */
+.see-more {
+    @apply absolute bottom-4 right-4 text-[#3a385d] font-semibold text-sm opacity-0 transition-opacity duration-300;
+}
+
+/* Setinha */
+.arrow {
+    @apply inline-block transition-transform duration-300;
+}
+
+/* Efeito normal de hover */
+.assessment-card:hover .see-more {
+    @apply opacity-100;
+}
+
+.assessment-card:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* 🔥 Mantém o hover normal mesmo após a animação automática */
+.assessment-card:hover,
+.assessment-card.flash-hover {
+    @apply -translate-y-2 shadow-xl transition-all duration-500;
+}
+
+/* 🔥 Garante que os efeitos de hover e animação coexistam */
+.assessment-card.flash-hover .see-more {
+    @apply opacity-100;
+}
+
+.assessment-card.flash-hover .arrow {
+    transform: translateX(4px);
 }

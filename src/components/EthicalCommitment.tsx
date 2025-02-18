@@ -1,6 +1,9 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import "@/styles/ethical.css"; // Arquivo de estilos atualizado
+import "@/styles/ethical.css";
 import { Noto_Sans } from "next/font/google";
 
 const notoSans = Noto_Sans({
@@ -31,6 +34,23 @@ const ethicalTopics = [
 ];
 
 const EthicalCommitment = () => {
+    const [animated, setAnimated] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const section = document.querySelector(".ethical-section");
+            if (section) {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8 && !animated) {
+                    setAnimated(true);
+                }
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [animated]);
+
     return (
         <section className="ethical-section">
             <div className="ethical-container">
@@ -39,9 +59,18 @@ const EthicalCommitment = () => {
                     <h2 className={`ethical-title ${notoSans.className}`}>ETHICAL COMMITMENT</h2>
 
                     {ethicalTopics.map((item, index) => (
-                        <Link key={index} href={item.link} className="ethical-item">
+                        <Link
+                            key={index}
+                            href={item.link}
+                            className={`ethical-item ${animated ? "flash-hover" : ""}`}
+                            style={{ transitionDelay: `${index * 200}ms` }}
+                        >
                             <h3 className="ethical-subtitle">{item.title}</h3>
                             <p>{item.description}</p>
+                            {/* See More aparece no hover */}
+                            <div className="see-more">
+                                See more <span className="arrow">→</span>
+                            </div>
                         </Link>
                     ))}
                 </div>
@@ -49,7 +78,7 @@ const EthicalCommitment = () => {
                 {/* Imagem */}
                 <div className="ethical-image">
                     <Image
-                        src="/ImagePlaceholder.png" // Nome do arquivo no public/
+                        src="/ImagePlaceholder.png"
                         alt="Psychologist nurturing a brain with plants"
                         width={500}
                         height={400}

@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "@/styles/assessments.css"; // Arquivo de estilos separado
@@ -34,12 +37,53 @@ const assessments = [
 ];
 
 const Assessments = () => {
+    const [animatedIndexes, setAnimatedIndexes] = useState<number[]>([]);
+    const sectionRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        assessments.forEach((_, index) => {
+                            setTimeout(() => {
+                                setAnimatedIndexes((prev) => [...prev, index]);
+
+                                // Remove o efeito após 1 segundo para resetar
+                                setTimeout(() => {
+                                    setAnimatedIndexes((prev) =>
+                                        prev.filter((i) => i !== index)
+                                    );
+                                }, 1000);
+                            }, index * 500); // Delay ajustado para garantir que o último receba a animação
+                        });
+
+                        observer.disconnect();
+                    }
+                });
+            },
+            { threshold: 0.3 } // Aciona quando 30% da seção estiver visível
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section className="assessments-section">
+        <section ref={sectionRef} className="assessments-section">
             <h2 className={`assessments-title ${notoSans.className}`}>ASSESSMENTS PROVIDED</h2>
             <div className="assessments-grid">
                 {assessments.map((item, index) => (
-                    <Link key={index} href={item.link} className="assessment-card">
+                    <Link
+                        key={index}
+                        href={item.link}
+                        className={`assessment-card ${
+                            animatedIndexes.includes(index) ? "flash-hover" : ""
+                        }`}
+                    >
                         <div className="assessment-image">
                             <Image
                                 src={item.image}
@@ -51,6 +95,10 @@ const Assessments = () => {
                         </div>
                         <h3 className="assessment-title">{item.title}</h3>
                         <p className="assessment-description">{item.description}</p>
+                        {/* See More aparece no hover */}
+                        <div className="see-more">
+                            See more <span className="arrow">→</span>
+                        </div>
                     </Link>
                 ))}
             </div>
