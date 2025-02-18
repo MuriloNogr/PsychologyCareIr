@@ -19,7 +19,7 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
         <div className={scrolled ? "scrolled" : ""}>
             <Header />
             <main>{children}</main>
-            <Footer />
+            {/*<Footer />*/}
         </div>
     );
 };

@@ -33,11 +33,11 @@
 }
 
 .hero-text h1 {
-    @apply text-5xl font-bold text-[#1F2937] leading-tight;
+    @apply text-5xl font-bold text-[#ffffff] leading-tight whitespace-nowrap;
 }
 
 .hero-text p {
-    @apply text-lg text-gray-600;
+    @apply text-lg text-[#ffffff];
 }
 
 /* Adicionado espaçamento correto no botão */
@@ -46,7 +46,7 @@
 }
 
 .hero-btn {
-    @apply bg-[#b2c4fd] text-white px-6 py-3 rounded-lg shadow-lg hover:bg-[#3a385d] transition;
+    @apply bg-[#d58d9f] text-white px-6 py-3 rounded-lg shadow-lg hover:bg-[#3a385d] transition;
 }
 
 .hero-image {

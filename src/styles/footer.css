@@ -3,4 +3,9 @@
 
 .footer {
     @apply bg-gradient-to-r from-[#D58D9F] to-[#B2677C] py-4 shadow-md;
+    @apply relative w-full h-[300] flex items-center;
+    background: url('/footerbg.jpeg') center/cover no-repeat;
+    background-size: cover;  /* 🔹 Certifique-se que o fundo cobre o elemento */
+    background-position: center;
+    background-repeat: no-repeat; /* 🔹 Evita a repetição da imagem */
 }

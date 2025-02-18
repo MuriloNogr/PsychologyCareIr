@@ -19,7 +19,7 @@ export default function Home() {
             <Team />
             <Contact />
         </Content>
-          <Footer />
+        <Footer/>
 </div>
   );
 }
