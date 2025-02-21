@@ -1,5 +1,4 @@
 import { Noto_Sans } from "next/font/google";
-import Image from "next/image";
 import "@/styles/hero.css";
 
 const notoSans = Noto_Sans({
@@ -26,10 +25,10 @@ const Hero = () => {
                     </div>
                 </div>
 
-                {/* Imagem */}
-                <div className="hero-image">
-                    <Image src="/ImagePlaceholder.png" alt="Consultório de Psicologia" width={512} height={0} />
-                </div>
+                {/*/!* Imagem *!/*/}
+                {/*<div className="hero-image">*/}
+                {/*    <Image src="/ImagePlaceholder.png" alt="Consultório de Psicologia" width={512} height={0} />*/}
+                {/*</div>*/}
             </div>
         </section>
     );

@@ -17,11 +17,12 @@
 }
 
 body {
-    color: var(--foreground);
-    background: var(--background);
+    background-color: #ffffff !important; /* Fundo branco fixo */
+    color: #000000; /* Cor do texto para manter a legibilidade */
     font-family: Arial, Helvetica, sans-serif;
 }
 
 html {
+    background-color: #ffffff !important;
     scroll-behavior: smooth;
 }
