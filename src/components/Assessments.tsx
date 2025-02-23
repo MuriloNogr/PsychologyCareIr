@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import "@/styles/assessments.css"; // Arquivo de estilos separado
+import "@/styles/assessments.css"; // Arquivo de estilos atualizado
 import { Noto_Sans } from "next/font/google";
 
 const notoSans = Noto_Sans({
@@ -74,7 +74,9 @@ const Assessments = () => {
 
     return (
         <section ref={sectionRef} id="assessments" className="assessments-section">
-            <h2 className={`assessments-title ${notoSans.className}`}>ASSESSMENTS PROVIDED</h2>
+            <h2 className={`assessments-title ${notoSans.className}`}>
+                ASSESSMENTS PROVIDED
+            </h2>
             <div className="assessments-grid">
                 {assessments.map((item, index) => (
                     <Link
@@ -84,6 +86,7 @@ const Assessments = () => {
                             animatedIndexes.includes(index) ? "flash-hover" : ""
                         }`}
                     >
+                        <div className="assessment-gradient"></div>
                         <div className="assessment-image">
                             <Image
                                 src={item.image}

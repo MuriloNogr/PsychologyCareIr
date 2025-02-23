@@ -1,51 +1,97 @@
 @import "./tailwind.css";
 
+/* Estrutura principal do Hero */
 .hero {
-    @apply relative w-full h-screen flex items-center;
-    background: url('/banner.jpeg') center/cover no-repeat;
-    position: relative;
+    @apply relative w-full h-screen flex items-center justify-center overflow-hidden;
+    background: radial-gradient(circle at center, #b2677c, #d58d9f, #b2c4fd, #3a385d);
 }
 
-/* Efeito de fade entre hero e header */
-.hero::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+/* Container do Aurora Background */
+.aurora-container {
+    @apply absolute inset-0 overflow-hidden;
 }
 
-/* Estiliza o container interno */
-.hero-container {
-    @apply container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 pb-[0%];
+/* Estilização das luzes aurora */
+.aurora {
+    @apply absolute w-[350px] h-[350px] rounded-full opacity-50 blur-[150px] animate-aurora;
 }
 
-/* Quando a classe .scrolled for ativada, o bg some */
-.hero.scrolled {
-    background-image: none;
-    @apply bg-white text-black transition-all duration-500;
+/* Definição das auroras com cores novas */
+.aurora:nth-child(1) {
+    background: #b2677c;
+    top: 5%;
+    left: 10%;
 }
 
+.aurora:nth-child(2) {
+    background: #d58d9f;
+    top: 35%;
+    right: 15%;
+}
+
+.aurora:nth-child(3) {
+    background: #b2c4fd;
+    bottom: 10%;
+    left: 20%;
+}
+
+.aurora:nth-child(4) {
+    background: #3a385d;
+    bottom: 15%;
+    right: 10%;
+}
+
+.aurora:nth-child(5) {
+    background: #e8a0b3;
+    top: 50%;
+    left: 30%;
+}
+
+.aurora:nth-child(6) {
+    background: #6d72c3;
+    bottom: 30%;
+    right: 30%;
+}
+
+/* Animação aprimorada */
+@keyframes auroraMove {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-50px) translateX(50px) scale(1.2);
+    }
+}
+
+.animate-aurora {
+    animation: auroraMove 8s infinite alternate ease-in-out;
+}
+
+/* Efeito de Fade-in para o texto */
 .hero-text {
-    @apply max-w-xl text-left space-y-6;
+    @apply text-center text-white relative z-10 max-w-2xl space-y-6 opacity-0 translate-y-10 transition-all duration-1000 ease-out;
 }
 
+/* Quando a classe "fade-in" for ativada, o texto aparece suavemente */
+.hero-text.fade-in {
+    @apply opacity-100 translate-y-0;
+}
+
+/* Título do Hero */
 .hero-text h1 {
-    @apply text-5xl font-bold text-[#ffffff] leading-tight whitespace-nowrap;
+    @apply text-5xl font-bold leading-tight;
 }
 
+/* Parágrafo */
 .hero-text p {
-    @apply text-lg text-[#ffffff];
+    @apply text-lg;
 }
 
-/* Adicionado espaçamento correto no botão */
+/* Botão */
 .hero-btn-container {
     @apply mt-6;
 }
 
-/* Estilização do botão */
 .hero-btn {
-    @apply bg-[#d58d9f] text-white px-6 py-3 rounded-lg shadow-lg hover:bg-[#3a385d] transition cursor-pointer;
+    @apply bg-[#b2c4fd] text-white px-6 py-3 rounded-lg shadow-lg hover:bg-[#3a385d] transition;
 }

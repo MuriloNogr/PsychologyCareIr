@@ -1,8 +1,8 @@
 @import "./tailwind.css";
 
+/* Estrutura geral da seção */
 .assessments-section {
     @apply py-16 px-6 bg-white text-black;
-    @apply relative w-full h-screen;
 }
 
 .assessments-title {
@@ -13,14 +13,28 @@
     @apply grid grid-cols-1 md:grid-cols-3 gap-8;
 }
 
+/* Configuração geral do Card */
 .assessment-card {
-    @apply bg-white border border-gray-300 rounded-lg shadow-lg p-6 flex flex-col relative overflow-hidden
+    @apply relative bg-white border border-gray-300 rounded-lg shadow-lg p-6 flex flex-col overflow-hidden
     transition-transform duration-300 transform cursor-pointer;
+}
+
+/* Fundo gradiente dinâmico */
+.assessment-gradient {
+    @apply absolute inset-0 opacity-50 transition-opacity duration-500;
+    background: linear-gradient(135deg, #b2677c, #d58d9f, #b2c4fd, #3a385d);
+    filter: blur(100px);
+}
+
+/* Hover para destacar o efeito */
+.assessment-card:hover .assessment-gradient {
+    opacity: 0.8;
+    filter: blur(60px);
 }
 
 /* Imagem */
 .assessment-image {
-    @apply flex justify-center mb-4;
+    @apply flex justify-center mb-4 relative z-10;
 }
 
 .assessment-img {
@@ -29,15 +43,15 @@
 
 /* Título */
 .assessment-title {
-    @apply text-xl font-semibold mb-2 text-left;
+    @apply text-xl font-semibold mb-2 text-left relative z-10;
 }
 
 /* Descrição */
 .assessment-description {
-    @apply text-gray-700 text-left;
+    @apply text-gray-700 text-left relative z-10;
 }
 
-/* See more */
+/* See More */
 .see-more {
     @apply absolute bottom-4 right-4 text-[#3a385d] font-semibold text-sm opacity-0 transition-opacity duration-300;
 }
