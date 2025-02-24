@@ -1,9 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Noto_Sans } from "next/font/google";
 import "@/styles/hero.css";
 
+// const notoSans = Noto_Sans({
+//     subsets: ["latin"],
+//     weight: "800",
+//     display: "swap",
+// });
 
 const Hero = () => {
     const [isVisible, setIsVisible] = useState(false);
