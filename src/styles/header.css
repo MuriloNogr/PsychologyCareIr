@@ -1,35 +1,19 @@
 @import "./tailwind.css";
 
-/* Header inicialmente invisível */
-.hidden-header {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-50px);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
-
-/* Quando o usuário rola a página, aplica-se a classe `scrolled` */
+/* Esconde o header inicialmente */
 .header {
-    @apply fixed top-0 left-0 w-full z-50 py-5 flex justify-between items-center px-6;
+    @apply fixed top-0 left-0 w-full z-50 py-5 px-6 transition-all duration-500 flex justify-between items-center opacity-0 pointer-events-none;
     background: transparent;
 }
 
-/* Quando o header aparece */
-.scrolled {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+/* Header aparece ao sair da seção hero */
+.header.visible {
+    @apply opacity-100 pointer-events-auto;
     background: linear-gradient(to right, #D58D9F, #B2677C);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: background 0.6s ease-in-out, box-shadow 0.6s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-/* Ajusta para garantir que SOMENTE o header tenha a transição */
-.scrolled .header-container {
-    transition: all 0.6s ease-in-out;
-}
-
-/* Alinhamento correto: Logo na esquerda, navbar na direita */
+/* Alinhamento correto */
 .header-container {
     @apply container mx-auto flex justify-between items-center;
 }
@@ -38,12 +22,11 @@
     @apply flex items-center max-w-[250px];
 }
 
-/* Tamanho do logo */
+/* Ajuste no tamanho do logo */
 .logo img {
     @apply h-12 transition-transform duration-300;
 }
 
-/* Efeito de hover no logo */
 .logo:hover img {
     transform: scale(1.05);
 }
@@ -53,21 +36,15 @@
     @apply flex space-x-6 font-medium;
 }
 
-/* Alinhamento correto da navbar na direita */
 .nav-container {
     @apply flex justify-end w-full;
 }
 
-/* Estilização dos links de navegação */
+/* Links de navegação */
 .nav-links a {
     @apply text-white hover:text-gray-200 transition-colors duration-300;
 }
 
-/* Estilização do título */
 .header-title {
     @apply text-white text-3xl font-bold transition-all duration-300 whitespace-nowrap;
-}
-
-.scrolled .header-title {
-    letter-spacing: 1px;
 }

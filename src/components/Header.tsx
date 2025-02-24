@@ -12,16 +12,14 @@ const lilyScript = Lily_Script_One({
 });
 
 const Header = () => {
-    const [scrolled, setScrolled] = useState(false);
-    const [hidden, setHidden] = useState(true); // Estado para ocultar no início
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             const heroSection = document.getElementById("hero");
             if (heroSection) {
                 const heroBottom = heroSection.getBoundingClientRect().bottom;
-                setHidden(heroBottom > 0); // Header invisível se ainda dentro do Hero
-                setScrolled(window.scrollY > heroSection.clientHeight * 0.2);
+                setIsVisible(heroBottom <= 0);
             }
         };
 
@@ -30,10 +28,12 @@ const Header = () => {
     }, []);
 
     return (
-        <header className={`header ${scrolled ? "scrolled" : ""} ${hidden ? "hidden-header" : ""}`}>
+        <header className={`header ${isVisible ? "visible" : ""}`}>
             <div className="header-container">
                 <Link href="/" className="logo">
-                    <h1 className={`header-title ${lilyScript.className}`}>Psychology Care</h1>
+                    <h1 className={`header-title ${lilyScript.className}`}>
+                        Psychology Care
+                    </h1>
                 </Link>
 
                 <nav className="nav-container">
