@@ -17,59 +17,25 @@
 }
 
 /* Definição das auroras com cores novas */
-.aurora:nth-child(1) {
-    background: #b2677c;
-    top: 5%;
-    left: 10%;
-}
-
-.aurora:nth-child(2) {
-    background: #d58d9f;
-    top: 35%;
-    right: 15%;
-}
-
-.aurora:nth-child(3) {
-    background: #b2c4fd;
-    bottom: 10%;
-    left: 20%;
-}
-
-.aurora:nth-child(4) {
-    background: #3a385d;
-    bottom: 15%;
-    right: 10%;
-}
-
-.aurora:nth-child(5) {
-    background: #e8a0b3;
-    top: 50%;
-    left: 30%;
-}
-
-.aurora:nth-child(6) {
-    background: #6d72c3;
-    bottom: 30%;
-    right: 30%;
-}
+.aurora:nth-child(1) { background: #b2677c; top: 5%; left: 10%; }
+.aurora:nth-child(2) { background: #d58d9f; top: 35%; right: 15%; }
+.aurora:nth-child(3) { background: #b2c4fd; bottom: 10%; left: 20%; }
+.aurora:nth-child(4) { background: #3a385d; bottom: 15%; right: 10%; }
+.aurora:nth-child(5) { background: #e8a0b3; top: 50%; left: 30%; }
+.aurora:nth-child(6) { background: #6d72c3; bottom: 30%; right: 30%; }
 
 /* Animação aprimorada */
 @keyframes auroraMove {
-    0%, 100% {
-        transform: translateY(0px) translateX(0px) scale(1);
-    }
-    50% {
-        transform: translateY(-50px) translateX(50px) scale(1.2);
-    }
+    0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
+    50% { transform: translateY(-50px) translateX(50px) scale(1.2); }
 }
-
 .animate-aurora {
     animation: auroraMove 8s infinite alternate ease-in-out;
 }
 
 /* Efeito de Fade-in para o texto */
 .hero-text {
-    @apply text-center text-white relative z-10 max-w-2xl space-y-6 opacity-0 translate-y-10 transition-all duration-1000 ease-out;
+    @apply text-center text-white relative z-10 max-w-4xl space-y-6 opacity-0 translate-y-10 transition-all duration-1000 ease-out;
 }
 
 /* Quando a classe "fade-in" for ativada, o texto aparece suavemente */
@@ -77,14 +43,19 @@
     @apply opacity-100 translate-y-0;
 }
 
-/* Título do Hero */
-.hero-text h1 {
-    @apply text-5xl font-bold leading-tight;
+/* Container do título */
+.hero-title-container {
+    @apply flex justify-center w-full;
+}
+
+/* 🔥 Imagem SVG do título agora BEM MAIOR 🔥 */
+.hero-title-svg {
+    @apply w-[90%] md:w-[85%] lg:w-[75%] xl:w-[65%] mx-auto;
 }
 
 /* Parágrafo */
 .hero-text p {
-    @apply text-lg;
+    @apply text-lg px-8;
 }
 
 /* Botão */

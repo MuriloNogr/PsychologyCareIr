@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Lily_Script_One } from "next/font/google";
 import "@/styles/header.css";
 
-// Importa a fonte otimizada do Google Fonts
 const lilyScript = Lily_Script_One({
     weight: "400",
     subsets: ["latin"],
@@ -14,26 +13,29 @@ const lilyScript = Lily_Script_One({
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [hidden, setHidden] = useState(true); // Estado para ocultar no início
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 100);
+            const heroSection = document.getElementById("hero");
+            if (heroSection) {
+                const heroBottom = heroSection.getBoundingClientRect().bottom;
+                setHidden(heroBottom > 0); // Header invisível se ainda dentro do Hero
+                setScrolled(window.scrollY > heroSection.clientHeight * 0.2);
+            }
         };
+
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
-        <header className={`header ${scrolled ? "scrolled" : ""}`}>
+        <header className={`header ${scrolled ? "scrolled" : ""} ${hidden ? "hidden-header" : ""}`}>
             <div className="header-container">
-                {/* Logo - Alinhado à esquerda */}
                 <Link href="/" className="logo">
-                    <h1 className={`header-title ${lilyScript.className}`}>
-                        Psychology Care
-                    </h1>
+                    <h1 className={`header-title ${lilyScript.className}`}>Psychology Care</h1>
                 </Link>
 
-                {/* Navbar - Alinhado à direita */}
                 <nav className="nav-container">
                     <ul className="nav-links">
                         <li><Link href="#home">HOME</Link></li>
