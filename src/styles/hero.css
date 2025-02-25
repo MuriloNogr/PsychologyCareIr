@@ -2,8 +2,17 @@
 
 /* Estrutura principal do Hero */
 .hero {
-    @apply relative w-full h-screen flex items-center justify-center overflow-hidden;
+    @apply relative w-full flex items-center justify-center overflow-hidden;
+    min-height: 130vh; /* 🔥 Excede ainda mais a altura da tela */
     background: radial-gradient(circle at center, #b2677c, #d58d9f, #b2c4fd, #3a385d);
+    position: relative;
+}
+
+/* Adicionando um fade menor e mais sutil na parte inferior */
+.hero::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-full h-24 pointer-events-none;
+    background: linear-gradient(to bottom, rgba(178, 196, 253, 0.05), rgba(255, 255, 255, 1));
 }
 
 /* Container do Aurora Background */
@@ -16,7 +25,7 @@
     @apply absolute w-[350px] h-[350px] rounded-full opacity-50 blur-[150px] animate-aurora;
 }
 
-/* Definição das auroras com cores novas */
+/* Definição das auroras */
 .aurora:nth-child(1) { background: #b2677c; top: 5%; left: 10%; }
 .aurora:nth-child(2) { background: #d58d9f; top: 35%; right: 15%; }
 .aurora:nth-child(3) { background: #b2c4fd; bottom: 10%; left: 20%; }
@@ -27,10 +36,10 @@
 /* Animação aprimorada */
 @keyframes auroraMove {
     0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
-    50% { transform: translateY(-50px) translateX(50px) scale(1.2); }
+    50% { transform: translateY(-90px) translateX(90px) scale(1.35); }
 }
 .animate-aurora {
-    animation: auroraMove 8s infinite alternate ease-in-out;
+    animation: auroraMove 4.5s infinite alternate ease-in-out;
 }
 
 /* Efeito de Fade-in para o texto */
@@ -41,6 +50,20 @@
 /* Quando a classe "fade-in" for ativada, o texto aparece suavemente */
 .hero-text.fade-in {
     @apply opacity-100 translate-y-0;
+}
+
+/* Flutuação suave do texto */
+@keyframes floatingText {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+.floating-text {
+    animation: floatingText 6s infinite ease-in-out;
+}
+
+.hero-container {
+    @apply mb-24;
 }
 
 /* Container do título */
