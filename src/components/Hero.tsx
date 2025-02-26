@@ -3,12 +3,6 @@
 import { useEffect, useState } from "react";
 import "@/styles/hero.css";
 
-// const notoSans = Noto_Sans({
-//     subsets: ["latin"],
-//     weight: "800",
-//     display: "swap",
-// });
-
 const Hero = () => {
     const [isVisible, setIsVisible] = useState(false);
 
@@ -30,7 +24,7 @@ const Hero = () => {
             </div>
 
             <div className="hero-container">
-                <div className={`hero-text ${isVisible ? "fade-in" : ""}`}>
+                <div className={`hero-text ${isVisible ? "fade-in floating-text" : ""}`}>
                     <div className="hero-title-container">
                         <img src="/heroTitle.svg" alt="Assessment Services" className="hero-title-svg" />
                     </div>
