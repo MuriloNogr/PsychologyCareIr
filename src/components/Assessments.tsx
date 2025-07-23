@@ -12,6 +12,8 @@ const notoSans = Noto_Sans({
     display: "swap",
 });
 
+type LottieAnimation = Record<string, unknown>;
+
 const assessments = [
     {
         title: "Clinical Psychology",
@@ -38,9 +40,9 @@ const assessments = [
 
 const Assessments = () => {
     const [animatedIndexes, setAnimatedIndexes] = useState<number[]>([]);
-    const [clinicalAnimation, setClinicalAnimation] = useState<any>(null);
-    const [neuralAnimation, setNeuralAnimation] = useState<any>(null);
-    const [educationalAnimation, setEducationalAnimation] = useState<any>(null);
+    const [clinicalAnimation, setClinicalAnimation] = useState<LottieAnimation | null>(null);
+    const [neuralAnimation, setNeuralAnimation] = useState<LottieAnimation | null>(null);
+    const [educationalAnimation, setEducationalAnimation] = useState<LottieAnimation | null>(null);
     const sectionRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
