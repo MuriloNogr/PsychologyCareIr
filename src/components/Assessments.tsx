@@ -39,26 +39,26 @@ const assessments = [
 
 const Assessments = () => {
     const [animatedIndexes, setAnimatedIndexes] = useState<number[]>([]);
-    const [clinicalAnimation, setClinicalAnimation] = useState<any>(null);
-    const [neuralAnimation, setNeuralAnimation] = useState<any>(null);
-    const [educationalAnimation, setEducationalAnimation] = useState<any>(null);
+    const [clinicalAnimation, setClinicalAnimation] = useState<Record<string, unknown> | null>(null);
+    const [neuralAnimation, setNeuralAnimation] = useState<Record<string, unknown> | null>(null);
+    const [educationalAnimation, setEducationalAnimation] = useState<Record<string, unknown> | null>(null);
     const sectionRef = useRef<HTMLDivElement>(null);
 
     // Carrega as animações Lottie
     useEffect(() => {
         fetch("/clinical.json")
             .then((res) => res.json())
-            .then(setClinicalAnimation)
+            .then((data: Record<string, unknown>) => setClinicalAnimation(data))
             .catch((err) => console.error("Erro ao carregar clinical.json:", err));
 
         fetch("/neural.json")
             .then((res) => res.json())
-            .then(setNeuralAnimation)
+            .then((data: Record<string, unknown>) => setNeuralAnimation(data))
             .catch((err) => console.error("Erro ao carregar neural.json:", err));
 
         fetch("/educational.json")
             .then((res) => res.json())
-            .then(setEducationalAnimation)
+            .then((data: Record<string, unknown>) => setEducationalAnimation(data))
             .catch((err) => console.error("Erro ao carregar educational.json:", err));
     }, []);
 
@@ -101,7 +101,7 @@ const Assessments = () => {
             <div className="assessments-grid">
                 {assessments.map((item, index) => {
                     const isLottie = item.type === "lottie";
-                    let animationToRender = null;
+                    let animationToRender: Record<string, unknown> | null = null;
 
                     switch (item.title) {
                         case "Clinical Psychology":
@@ -123,7 +123,7 @@ const Assessments = () => {
                             href={item.link}
                             className={`assessment-card ${
                                 animatedIndexes.includes(index) ? "flash-hover" : ""
-                            } ${notoSans.className}`} // 👈 Fonte aplicada no card
+                            } ${notoSans.className}`}
                         >
                             <div className="assessment-gradient"></div>
                             <div className="assessment-image">
@@ -132,14 +132,6 @@ const Assessments = () => {
                                         animationData={animationToRender}
                                         loop
                                         style={{ width: 250, height: 250 }}
-                                    />
-                                ) : item.image ? (
-                                    <Image
-                                        src={item.image}
-                                        alt={item.title}
-                                        width={400}
-                                        height={250}
-                                        className="assessment-img"
                                     />
                                 ) : null}
                             </div>
