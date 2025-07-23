@@ -1,7 +1,7 @@
 @import "./tailwind.css";
 
 .team-section {
-    @apply py-16 px-6 bg-white text-black;
+    @apply py-16 px-6 text-black;
 }
 
 .team-title {

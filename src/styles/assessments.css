@@ -2,11 +2,11 @@
 
 /* Estrutura geral da seção */
 .assessments-section {
-    @apply py-16 px-6 bg-white text-black;
+    @apply py-16 px-6 text-black;
 }
 
 .assessments-title {
-    @apply text-3xl font-bold mb-8 mt-12;
+    @apply text-3xl font-bold mb-8 mt-12 text-white;
 }
 
 .assessments-grid {
@@ -26,7 +26,6 @@
     filter: blur(100px);
 }
 
-/* Hover para destacar o efeito */
 .assessment-card:hover .assessment-gradient {
     opacity: 0.8;
     filter: blur(60px);
@@ -56,12 +55,10 @@
     @apply absolute bottom-4 right-4 text-[#3a385d] font-semibold text-sm opacity-0 transition-opacity duration-300;
 }
 
-/* Setinha */
 .arrow {
     @apply inline-block transition-transform duration-300;
 }
 
-/* Efeito normal de hover */
 .assessment-card:hover .see-more {
     @apply opacity-100;
 }
@@ -70,13 +67,12 @@
     transform: translateX(4px);
 }
 
-/* 🔥 Mantém o hover normal mesmo após a animação automática */
+/* Efeito hover e automático */
 .assessment-card:hover,
 .assessment-card.flash-hover {
     @apply -translate-y-2 shadow-xl transition-all duration-500;
 }
 
-/* 🔥 Garante que os efeitos de hover e animação coexistam */
 .assessment-card.flash-hover .see-more {
     @apply opacity-100;
 }

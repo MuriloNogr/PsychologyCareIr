@@ -12,23 +12,28 @@ const notoSans = Noto_Sans({
     display: "swap",
 });
 
+// #3a385d – azul escuro (fundo principal)
+// #d58d9f – rosa claro (destaques e botões)
+// #b2c4fd – azul suave (detalhes e contraste)
+// #b2677c – rosa queimado (elementos secundários)
+
 const ethicalTopics = [
     {
         title: "Integrity and Trust",
         description:
-            "Psychologists uphold honesty, transparency, and professional boundaries in every interaction, ensuring trust and confidence in the therapeutic process.",
+            "Ethical, culturally sensitive practices aligned with PSI/APA guidelines.",
         link: "/ethics/integrity",
     },
     {
         title: "Respect for Rights and Dignity",
         description:
-            "We prioritize respect for individual autonomy, privacy, and diversity, creating an inclusive, judgment-free environment for everyone we serve.",
+            "Standardized, validated assessment tools.",
         link: "/ethics/respect",
     },
     {
         title: "Beneficence and Nonmaleficence",
         description:
-            "Our work is guided by a commitment to promote well-being while minimizing harm. Each assessment, intervention, and recommendation is carried out with the highest care and responsibility.",
+            "Clear reporting with practical recommendations. ",
         link: "/ethics/beneficence",
     },
 ];

@@ -1,5 +1,10 @@
 @import "./tailwind.css";
 
+.hero-line {
+    width: 2px;
+    background-color: white;
+    height: 200px; /* teste temporário */
+}
 /* Esconde o header inicialmente */
 .header {
     @apply fixed top-0 left-0 w-full z-50 py-5 px-6 transition-all duration-500 flex justify-between items-center opacity-0 pointer-events-none;
@@ -9,8 +14,9 @@
 /* Header aparece ao sair da seção hero */
 .header.visible {
     @apply opacity-100 pointer-events-auto;
-    background: linear-gradient(to right, #D58D9F, #B2677C);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-image: url("/banner2.png");
+    background-size: cover;
+    background-position: center;
 }
 
 /* Alinhamento correto */
