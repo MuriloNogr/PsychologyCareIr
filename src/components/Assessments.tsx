@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import Lottie from "lottie-react";
 import "@/styles/assessments.css";
@@ -39,30 +38,28 @@ const assessments = [
 
 const Assessments = () => {
     const [animatedIndexes, setAnimatedIndexes] = useState<number[]>([]);
-    const [clinicalAnimation, setClinicalAnimation] = useState<Record<string, unknown> | null>(null);
-    const [neuralAnimation, setNeuralAnimation] = useState<Record<string, unknown> | null>(null);
-    const [educationalAnimation, setEducationalAnimation] = useState<Record<string, unknown> | null>(null);
+    const [clinicalAnimation, setClinicalAnimation] = useState<any>(null);
+    const [neuralAnimation, setNeuralAnimation] = useState<any>(null);
+    const [educationalAnimation, setEducationalAnimation] = useState<any>(null);
     const sectionRef = useRef<HTMLDivElement>(null);
 
-    // Carrega as animações Lottie
     useEffect(() => {
         fetch("/clinical.json")
             .then((res) => res.json())
-            .then((data: Record<string, unknown>) => setClinicalAnimation(data))
+            .then(setClinicalAnimation)
             .catch((err) => console.error("Erro ao carregar clinical.json:", err));
 
         fetch("/neural.json")
             .then((res) => res.json())
-            .then((data: Record<string, unknown>) => setNeuralAnimation(data))
+            .then(setNeuralAnimation)
             .catch((err) => console.error("Erro ao carregar neural.json:", err));
 
         fetch("/educational.json")
             .then((res) => res.json())
-            .then((data: Record<string, unknown>) => setEducationalAnimation(data))
+            .then(setEducationalAnimation)
             .catch((err) => console.error("Erro ao carregar educational.json:", err));
     }, []);
 
-    // Animação dos cards ao entrar na viewport
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -101,7 +98,7 @@ const Assessments = () => {
             <div className="assessments-grid">
                 {assessments.map((item, index) => {
                     const isLottie = item.type === "lottie";
-                    let animationToRender: Record<string, unknown> | null = null;
+                    let animationToRender = null;
 
                     switch (item.title) {
                         case "Clinical Psychology":
