@@ -1,7 +1,9 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import ConditionsAssessed from "@/components/ConditionsAssessed";
+import KeyPrinciples from "@/components/KeyPrinciples";
 import Assessments from "@/components/Assessments";
-import EthicalCommitment from "@/components/EthicalCommitment";
+import EthicalFramework from "@/components/EthicalFramework";
 import Team from "@/components/Team";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -9,17 +11,19 @@ import Content from "@/components/Content";
 import "@/styles/globals.css";
 
 export default function Home() {
-  return (
-      <div>
-        <Header />
-          <Hero />
-        <Content>
-            <Assessments />
-            <EthicalCommitment />
-            <Team />
-            <Contact />
-        </Content>
-        <Footer/>
-</div>
-  );
+    return (
+        <div>
+            <Header />
+            <Hero />
+            <Content>
+                <Assessments />
+                <KeyPrinciples/>
+                <ConditionsAssessed />
+                <EthicalFramework />
+                <Team />
+                <Contact />
+            </Content>
+            <Footer />
+        </div>
+    );
 }

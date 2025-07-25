@@ -1,5 +1,6 @@
 @import "./tailwind.css";
 
 .content-container {
-    @apply max-w-[1200px] w-[90%] mx-auto py-8 bg-transparent;
+    @apply max-w-[1200px] w-[90%] mx-auto py-8 bg-transparent overflow-x-hidden;
+
 }

@@ -1,0 +1,78 @@
+/* Section wrapper */
+.keyprinciples-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 85rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Section title */
+.keyprinciples-heading {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 700;    /* font-bold */
+    color: #d58d9f;      /* rosa claro */
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Grid layout */
+.keyprinciples-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .keyprinciples-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .keyprinciples-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Card */
+.keyprinciples-card {
+    background-color: #3a385d; /* azul escuro */
+    padding: 1.75rem;
+    border-radius: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.keyprinciples-card:hover {
+    background-color: #2f2d4c; /* um tom mais escuro no hover */
+}
+
+/* Icon */
+.keyprinciples-icon {
+    background-color: #b2c4fd; /* azul suave */
+    color: white;
+    border-radius: 0.75rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+/* Title */
+.keyprinciples-title {
+    color: white;
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Text */
+.keyprinciples-text {
+    color: #e5e7eb; /* text-gray-200 */
+    font-size: 1rem;
+    line-height: 1.5rem;
+}

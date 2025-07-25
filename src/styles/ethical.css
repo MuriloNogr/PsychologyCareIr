@@ -1,62 +1,117 @@
-@import "./tailwind.css";
+/* styles/ethical.css */
 
 .ethical-section {
-    @apply py-16 px-6 text-black;
+    position: relative;
+    padding: 2.5rem 1rem;
+    max-width: 85rem;
+    margin: 0 auto;
 }
 
-.ethical-container {
-    @apply max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12;
+.ethical-wrapper {
+    position: relative;
+    padding: 1.5rem;
 }
 
-.ethical-text {
-    @apply flex-1;
+.ethical-grid {
+    position: relative;
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+    .ethical-grid {
+        grid-template-columns: repeat(12, 1fr);
+        align-items: center;
+    }
+
+    .ethical-tabs {
+        grid-column: span 6 / span 6;
+        grid-column-start: 8;
+        order: 2;
+    }
+
+    .ethical-image-wrapper {
+        grid-column: span 6 / span 6;
+    }
 }
 
 .ethical-title {
-    @apply text-3xl font-bold mb-6;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #3a385d;
 }
 
-.ethical-item {
-    @apply block bg-white border border-gray-300 rounded-lg p-6 relative overflow-hidden
-    transition-transform duration-300 transform cursor-pointer mb-6;
+.ethical-tab-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
-/* Título */
-.ethical-subtitle {
-    @apply text-xl font-semibold mb-2;
+.ethical-tab {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
 }
 
-/* Descrição */
-.ethical-item p {
-    @apply text-gray-700;
+.ethical-tab:hover,
+.ethical-tab:focus {
+    background-color: #e5e7eb;
 }
 
-/* See more */
-.see-more {
-    @apply absolute bottom-4 right-4 text-[#3a385d] font-semibold text-sm opacity-0 transition-opacity duration-300;
+.ethical-tab.active {
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* Setinha */
-.arrow {
-    @apply inline-block transition-transform duration-300;
+.ethical-icon {
+    margin-top: 0.5rem;
+    color: #3a385d;
 }
 
-/* Animação inicial ao entrar na tela */
-.ethical-item.animate-once {
-    @apply -translate-y-1 shadow-lg transition-all duration-500;
+.ethical-tab-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #3a385d;
 }
 
-/* Mantém hover funcionando normalmente após a animação */
-.ethical-item:hover {
-    @apply -translate-y-1 shadow-lg;
+.ethical-tab-desc {
+    margin-top: 0.25rem;
+    color: #3a385d;
 }
 
-.ethical-item:hover .see-more,
-.ethical-item.animate-once .see-more {
-    @apply opacity-100;
+.ethical-image-wrapper {
+    position: relative;
+    z-index: 10;
 }
 
-.ethical-item:hover .arrow,
-.ethical-item.animate-once .arrow {
-    transform: translateX(4px);
+.ethical-image {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.ethical-svg {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(5rem);
+}
+
+.ethical-svg-icon {
+    width: 4rem;
+    color: #b2677c;
+}
+
+@media (min-width: 768px) {
+    .ethical-svg {
+        display: block;
+    }
+}
+
+.ethical-bg {
+    display: none;
 }

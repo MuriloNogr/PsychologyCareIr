@@ -1,12 +1,13 @@
 import { ReactNode } from "react";
-import "@/styles/content.css"; // Importa o CSS externo para estilização
+import "@/styles/content.css"; // CSS externo
 
 interface ContentProps {
     children: ReactNode;
 }
 
 const Content = ({ children }: ContentProps) => {
-    return <div className="content-container">{children}</div>;
+    return <main className="content-container">{children}</main>;
 };
 
 export default Content;
+

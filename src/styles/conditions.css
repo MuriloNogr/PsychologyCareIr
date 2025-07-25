@@ -1,0 +1,36 @@
+@import "./tailwind.css";
+
+/* Seção principal */
+.conditions-section {
+    @apply w-full py-16 px-4 md:px-12 text-white font-sans;
+    /*background-color: #3a385d !important;*/
+}
+
+/* Título da seção */
+.conditions-title {
+    @apply text-3xl md:text-4xl font-bold text-center mb-12 text-[#d58d9f];
+}
+
+/* Grid dos cards */
+.conditions-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto;
+}
+
+/* Card individual */
+.conditions-card {
+    @apply bg-[#b2677c] bg-opacity-20 border border-[#b2677c] rounded-2xl shadow-lg p-6 md:p-8 transition-transform hover:scale-[1.01];
+}
+
+/* Título do card */
+.conditions-card-title {
+    @apply text-xl md:text-2xl font-semibold text-[#b2c4fd] mb-4;
+}
+
+/* Lista */
+.conditions-list {
+    @apply space-y-3 text-base md:text-lg leading-relaxed text-white;
+}
+
+.conditions-list li strong {
+    @apply text-[#d58d9f];
+}
