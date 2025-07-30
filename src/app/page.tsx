@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ConditionsAssessed from "@/components/ConditionsAssessed";
+import AssessmentProcess from "@/components/AssessmentProcess";
 import KeyPrinciples from "@/components/KeyPrinciples";
 import Assessments from "@/components/Assessments";
 import EthicalFramework from "@/components/EthicalFramework";
@@ -19,6 +20,7 @@ export default function Home() {
                 <Assessments />
                 <KeyPrinciples/>
                 <ConditionsAssessed />
+                <AssessmentProcess/>
                 <EthicalFramework />
                 <Team />
                 <Contact />
