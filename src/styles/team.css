@@ -1,37 +1,74 @@
-@import "./tailwind.css";
-
-.team-section {
-    @apply py-16 px-6 text-black;
+.process-section {
+    padding: 4rem 1rem;
+    background-color: #3a385d; /* azul escuro */
+    color: #fff;
+    text-align: center;
 }
 
-.team-title {
-    @apply text-3xl font-bold text-center mb-8;
+.process-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #d58d9f; /* rosa claro */
+    margin-bottom: 3rem;
 }
 
-.team-grid {
-    @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.process-card {
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    min-height: 320px;
+}
+
+.process-number {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #3a385d;
+    color: white;
+    border-radius: 50%;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.process-image {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 100px;
+    height: auto;
+    opacity: 0.9;
+    border-radius: 0.5rem;
+}
+
+.process-timeline-info {
+    margin-top: 2.5rem;
+    color: #d58d9f;
+    font-weight: 500;
 }
 
 .team-card {
-    @apply bg-white border border-gray-300 rounded-lg shadow-lg p-6 flex flex-col items-center text-center transition-transform duration-300 transform hover:-translate-y-2 hover:shadow-xl cursor-pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
 }
 
-.team-image {
-    @apply w-36 h-36 bg-gray-300 rounded-lg flex justify-center items-center mb-4;
-}
-
-.team-img {
-    @apply object-contain w-auto h-auto;
-}
-
-.team-info {
-    @apply text-left w-full;
-}
-
-.team-name {
-    @apply text-xl font-semibold text-center;
-}
-
-.team-description {
-    @apply text-gray-700 text-center mt-2;
+.team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(213, 141, 159, 0.15);
 }
