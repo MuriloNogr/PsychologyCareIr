@@ -76,6 +76,8 @@ export default function Team() {
         return () => window.removeEventListener("keydown", onKeyDown);
     }, [active]);
 
+
+    // @ts-expect-error
     useOutsideClick(ref, () => setActive(null));
 
     return (
