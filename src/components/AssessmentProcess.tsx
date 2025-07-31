@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { WobbleCard } from "@/components/ui/wobble-card";
 
 const AssessmentProcess = () => {
@@ -12,8 +13,8 @@ const AssessmentProcess = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
                 {/* Card 1 */}
-                <WobbleCard containerClassName="col-span-1 lg:col-span-2 min-h-[300px] bg-[#b2677c]">
-                    <div className="max-w-lg">
+                <WobbleCard containerClassName="col-span-1 lg:col-span-2 min-h-[300px] bg-[#b2677c] relative overflow-hidden">
+                    <div className="max-w-lg z-10 relative">
                         <h3 className="text-2xl font-semibold">
                             1. Initial Consultation (1 hour)
                         </h3>
@@ -21,12 +22,14 @@ const AssessmentProcess = () => {
                             Discussion of concerns, history, and goals.
                         </p>
                     </div>
-                    <img
-                        src="/process1.png"
-                        alt="Step 1"
-                        width={400}
-                        className="absolute -right-10 bottom-0 object-contain rounded-2xl"
-                    />
+                    <div className="absolute -right-10 bottom-0 w-[400px] h-[240px]">
+                        <Image
+                            src="/process1.png"
+                            alt="Step 1"
+                            fill
+                            className="object-contain rounded-2xl"
+                        />
+                    </div>
                 </WobbleCard>
 
                 {/* Card 2 */}
@@ -42,8 +45,8 @@ const AssessmentProcess = () => {
                 </WobbleCard>
 
                 {/* Card 3 */}
-                <WobbleCard containerClassName="col-span-1 lg:col-span-3 min-h-[300px] bg-[#d58d9f]">
-                    <div className="max-w-lg">
+                <WobbleCard containerClassName="col-span-1 lg:col-span-3 min-h-[300px] bg-[#d58d9f] relative overflow-hidden">
+                    <div className="max-w-lg z-10 relative">
                         <h3 className="text-2xl font-semibold">
                             3. Feedback & Report (1-hour session + 5–10h drafting)
                         </h3>
@@ -52,12 +55,14 @@ const AssessmentProcess = () => {
                             tailored recommendations.
                         </p>
                     </div>
-                    <img
-                        src="/process1.png"
-                        alt="Step 3"
-                        width={400}
-                        className="absolute -right-10 bottom-0 object-contain rounded-2xl"
-                    />
+                    <div className="absolute -right-10 bottom-0 w-[400px] h-[240px]">
+                        <Image
+                            src="/process1.png"
+                            alt="Step 3"
+                            fill
+                            className="object-contain rounded-2xl"
+                        />
+                    </div>
                 </WobbleCard>
             </div>
 

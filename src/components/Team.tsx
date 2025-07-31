@@ -77,7 +77,7 @@ export default function Team() {
     }, [active]);
 
 
-    // @ts-expect-error
+    // @ts-expect-error - Gambiarra
     useOutsideClick(ref, () => setActive(null));
 
     return (
