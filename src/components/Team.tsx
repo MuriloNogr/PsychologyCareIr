@@ -2,8 +2,9 @@
 
 import React, { JSX, useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import { useOutsideClick } from "@/hooks/use-outside-click";
-import "@/styles/team.css"; // certifica-se de que está importando o CSS externo
+import "@/styles/team.css";
 
 type Member = {
     name: string;
@@ -75,7 +76,6 @@ export default function Team() {
         return () => window.removeEventListener("keydown", onKeyDown);
     }, [active]);
 
-    // @ts-ignore
     useOutsideClick(ref, () => setActive(null));
 
     return (
@@ -110,12 +110,14 @@ export default function Team() {
                             ref={ref}
                             className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 rounded-3xl overflow-hidden"
                         >
-                            <motion.img
-                                layoutId={`image-${active.name}-${id}`}
-                                src={active.src}
-                                alt={active.name}
-                                className="w-full h-80 object-cover object-top"
-                            />
+                            <motion.div layoutId={`image-${active.name}-${id}`} className="w-full h-80 relative">
+                                <Image
+                                    src={active.src}
+                                    alt={active.name}
+                                    fill
+                                    className="object-cover object-top rounded-t-3xl"
+                                />
+                            </motion.div>
                             <div className="p-6">
                                 <motion.h3
                                     layoutId={`title-${active.name}-${id}`}
@@ -149,14 +151,16 @@ export default function Team() {
                             key={member.name}
                             layoutId={`card-${member.name}-${id}`}
                             onClick={() => setActive(member)}
-                            className="team-card text-center cursor-pointer w-[280px] md:w-[320px]"
+                            className="team-card text-center cursor-pointer w-[280px] md:w-[340px]"
                         >
-                            <motion.img
-                                layoutId={`image-${member.name}-${id}`}
-                                src={member.src}
-                                alt={member.name}
-                                className="rounded-xl w-full h-auto"
-                            />
+                            <motion.div layoutId={`image-${member.name}-${id}`} className="relative w-full h-48 md:h-60">
+                                <Image
+                                    src={member.src}
+                                    alt={member.name}
+                                    fill
+                                    className="rounded-xl object-cover object-top"
+                                />
+                            </motion.div>
                             <div className="mt-4">
                                 <motion.h3
                                     layoutId={`title-${member.name}-${id}`}
