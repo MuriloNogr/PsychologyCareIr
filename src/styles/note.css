@@ -1,0 +1,36 @@
+.note-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    max-width: 960px;
+    padding: 2rem 2rem 2rem 4rem;
+    margin: 2.5rem auto;
+    background-color: #3a385d;
+    border-radius: 1rem;
+    position: relative;
+    isolation: isolate;
+}
+
+.note-container::before {
+    content: "";
+    position: absolute;
+    left: 1.5rem;
+    width: 0.4rem;
+    height: 80%;
+    background-color: #d58d9f;
+    z-index: 10;
+    border-radius: 9999px;
+}
+
+.note-text {
+    color: #f0f0f0;
+    font-size: 1.125rem; /* text-lg */
+    line-height: 1.75rem;
+    white-space: pre-wrap;
+}
+
+.note-highlight {
+    font-weight: 700;
+    color: #b2c4fd;
+}

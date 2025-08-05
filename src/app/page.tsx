@@ -7,7 +7,8 @@ import Assessments from "@/components/Assessments";
 import EthicalFramework from "@/components/EthicalFramework";
 import Team from "@/components/Team";
 import Faqs from "@/components/Faqs";
-import Contact from "@/components/Contact";
+import Notes from "@/components/Notes";
+import Contact from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Content from "@/components/Content";
 import "@/styles/globals.css";
@@ -25,6 +26,7 @@ export default function Home() {
                 <EthicalFramework />
                 <Team />
                 <Faqs/>
+                <Notes/>
                 <Contact />
             </Content>
             <Footer />
