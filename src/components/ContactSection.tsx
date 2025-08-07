@@ -1,6 +1,11 @@
 "use client";
 
 import React from "react";
+import {
+    Phone,
+    Mail,
+    MapPin
+} from "lucide-react";
 import "@/styles/contact.css";
 
 const ContactSection = () => {
@@ -8,9 +13,21 @@ const ContactSection = () => {
         <section className="contact-section">
             <div className="contact-info">
                 <h2 className="contact-title">Contact</h2>
-                <p>📞 087-1164550</p>
-                <p>📧 mervynclyne@gmail.com</p>
-                <p>📍 Moore Street, Kilrush, County Clare, Ireland</p>
+
+                <p className="contact-line">
+                    <Phone className="contact-icon" />
+                    087-1164550
+                </p>
+
+                <p className="contact-line">
+                    <Mail className="contact-icon" />
+                    mervynclyne@gmail.com
+                </p>
+
+                <p className="contact-line">
+                    <MapPin className="contact-icon" />
+                    Moore Street, Kilrush, County Clare, Ireland
+                </p>
             </div>
 
             <div className="contact-map">

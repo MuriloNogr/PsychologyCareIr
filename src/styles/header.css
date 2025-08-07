@@ -3,15 +3,14 @@
 .hero-line {
     width: 2px;
     background-color: white;
-    height: 200px; /* teste temporário */
+    height: 200px;
 }
-/* Esconde o header inicialmente */
+
 .header {
     @apply fixed top-0 left-0 w-full z-50 py-5 px-6 transition-all duration-500 flex justify-between items-center opacity-0 pointer-events-none;
     background: transparent;
 }
 
-/* Header aparece ao sair da seção hero */
 .header.visible {
     @apply opacity-100 pointer-events-auto;
     background-image: url("/banner2.png");
@@ -19,38 +18,30 @@
     background-position: center;
 }
 
-/* Alinhamento correto */
 .header-container {
-    @apply container mx-auto flex justify-between items-center;
+    @apply flex justify-between items-center w-full;
+}
+
+.logo-wrapper {
+    @apply flex items-center justify-start w-full max-w-[250px];
 }
 
 .logo {
-    @apply flex items-center max-w-[250px];
+    @apply flex items-center;
 }
 
-/* Ajuste no tamanho do logo */
-.logo img {
-    @apply h-12 transition-transform duration-300;
-}
-
-.logo:hover img {
-    transform: scale(1.05);
-}
-
-/* Navbar */
-.nav-links {
-    @apply flex space-x-6 font-medium;
-}
-
-.nav-container {
+.nav-wrapper {
     @apply flex justify-end w-full;
 }
 
-/* Links de navegação */
-.nav-links a {
-    @apply text-white hover:text-gray-200 transition-colors duration-300;
+.nav-links-group {
+    @apply flex flex-wrap justify-end gap-1.5 sm:gap-2;
 }
 
-.header-title {
-    @apply text-white text-3xl font-bold transition-all duration-300 whitespace-nowrap;
+.nav-button {
+    @apply py-1.5 px-2.5 inline-flex items-center gap-x-1.5 text-sm text-white bg-[#3a385d] hover:text-[#d58d9f] rounded-lg transition-colors duration-300;
+}
+
+.nav-button svg {
+    @apply text-[#b2c4fd] size-4;
 }

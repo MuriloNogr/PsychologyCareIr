@@ -3,6 +3,8 @@
 import React from "react";
 import Image from "next/image";
 import { WobbleCard } from "@/components/ui/wobble-card";
+import { Clock } from "lucide-react"; // ícone do timeline
+import "@/styles/process.css"; // já deve estar importado
 
 const AssessmentProcess = () => {
     return (
@@ -51,8 +53,7 @@ const AssessmentProcess = () => {
                             3. Feedback & Report (1-hour session + 5–10h drafting)
                         </h3>
                         <p className="mt-4 text-white/90">
-                            Includes detailed findings, diagnoses (if applicable), and
-                            tailored recommendations.
+                            Includes detailed findings, diagnoses (if applicable), and tailored recommendations.
                         </p>
                     </div>
                     <div className="absolute -right-10 bottom-0 w-[400px] h-[240px]">
@@ -66,9 +67,13 @@ const AssessmentProcess = () => {
                 </WobbleCard>
             </div>
 
-            <p className="text-center mt-10 text-[#d58d9f]">
-                Timeline: 60–90 days for completion.
-            </p>
+            {/* Novo bloco Timeline */}
+            <div className="timeline-box mt-10">
+                <Clock className="timeline-icon" />
+                <p className="timeline-text">
+                    <span className="timeline-highlight">Timeline:</span> 60–90 days for completion.
+                </p>
+            </div>
         </section>
     );
 };

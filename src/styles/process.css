@@ -76,3 +76,49 @@
   font-size: 1rem;
   color: #d58d9f;
 }
+
+.timeline-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 960px;
+  margin: 2.5rem auto 0;
+  padding: 1.5rem 2rem;
+  background-color: #3a385d;
+  border-radius: 1rem;
+  position: relative;
+  isolation: isolate;
+}
+
+.timeline-box::before {
+  content: "";
+  position: absolute;
+  left: 1.5rem;
+  width: 0.4rem;
+  height: 80%;
+  background-color: #d58d9f;
+  z-index: 10;
+  border-radius: 9999px;
+}
+
+.timeline-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  color: #d58d9f;
+  z-index: 20;
+}
+
+.timeline-text {
+  color: #f0f0f0;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  white-space: pre-wrap;
+  z-index: 20;
+}
+
+.timeline-highlight {
+  font-weight: 700;
+  color: #d58d9f;
+}
