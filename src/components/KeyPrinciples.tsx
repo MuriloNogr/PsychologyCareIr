@@ -1,6 +1,11 @@
 "use client";
 
-import { ShieldCheck, BookOpenCheck, FileText } from "lucide-react";
+import {
+    ShieldCheck,
+    BookOpenCheck,
+    FileText
+} from "lucide-react";
+
 import "@/styles/principles.css";
 
 const KeyPrinciples = () => {
@@ -12,7 +17,7 @@ const KeyPrinciples = () => {
                 {/* Card 1 */}
                 <div className="keyprinciples-card">
                     <div className="keyprinciples-icon">
-                        <ShieldCheck />
+                        <ShieldCheck size={24} strokeWidth={2} />
                     </div>
                     <h3 className="keyprinciples-title">
                         Ethical, culturally sensitive practices
@@ -25,7 +30,7 @@ const KeyPrinciples = () => {
                 {/* Card 2 */}
                 <div className="keyprinciples-card">
                     <div className="keyprinciples-icon">
-                        <BookOpenCheck />
+                        <BookOpenCheck size={24} strokeWidth={2} />
                     </div>
                     <h3 className="keyprinciples-title">Validated Tools</h3>
                     <p className="keyprinciples-text">
@@ -36,7 +41,7 @@ const KeyPrinciples = () => {
                 {/* Card 3 */}
                 <div className="keyprinciples-card">
                     <div className="keyprinciples-icon">
-                        <FileText />
+                        <FileText size={24} strokeWidth={2} />
                     </div>
                     <h3 className="keyprinciples-title">Clear Reporting</h3>
                     <p className="keyprinciples-text">

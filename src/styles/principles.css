@@ -1,19 +1,8 @@
-/* Section wrapper */
-.keyprinciples-section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    max-width: 85rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 /* Section title */
 .keyprinciples-heading {
-    font-size: 1.875rem; /* text-3xl */
-    font-weight: 700;    /* font-bold */
-    color: #d58d9f;      /* rosa claro */
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #d58d9f;
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -39,19 +28,21 @@
 
 /* Card */
 .keyprinciples-card {
-    background-color: #3a385d; /* azul escuro */
+    background-color: #3a385d;
     padding: 1.75rem;
     border-radius: 1rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: default;
 }
 
 .keyprinciples-card:hover {
-    background-color: #2f2d4c; /* um tom mais escuro no hover */
+    background-color: #2f2d4c;
+    transform: translateY(-4px);
 }
 
 /* Icon */
 .keyprinciples-icon {
-    background-color: #b2c4fd; /* azul suave */
+    background-color: #b2c4fd;
     color: white;
     border-radius: 0.75rem;
     width: 3rem;
@@ -64,15 +55,37 @@
 
 /* Title */
 .keyprinciples-title {
-    color: white;
-    font-size: 1.125rem; /* text-lg */
+    color: #ffffff;
+    font-size: 1.125rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
 /* Text */
 .keyprinciples-text {
-    color: #e5e7eb; /* text-gray-200 */
+    color: #ffffff;
     font-size: 1rem;
     line-height: 1.5rem;
+}
+
+/* Hover Card Fixes */
+
+/* Desativa hovercard por padrão */
+[data-hover-card-content] {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Ativa quando hover */
+[data-hover-card-trigger]:hover + [data-hover-card-content],
+[data-hover-card-content]:hover {
+    display: block !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* Remove comportamento de tooltip sempre ativo */
+[data-radix-popper-content-wrapper] {
+    display: none !important;
 }
