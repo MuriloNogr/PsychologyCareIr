@@ -3,15 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Lily_Script_One } from "next/font/google";
 import { Menu, Target, Brain, Eye, Users, HelpCircle, Mail } from "lucide-react";
 import "@/styles/header.css";
-
-const lilyScript = Lily_Script_One({
-    weight: "400",
-    subsets: ["latin"],
-    display: "swap",
-});
 
 const Header = () => {
     const [isVisible, setIsVisible] = useState(false);
