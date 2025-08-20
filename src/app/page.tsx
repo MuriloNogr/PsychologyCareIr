@@ -20,8 +20,8 @@ export default function Home() {
             <Hero />
             <Content>
                 <Assessments />
-                <KeyPrinciples/>
                 <ConditionsAssessed />
+                <KeyPrinciples/>
                 <AssessmentProcess/>
                 <EthicalFramework />
                 <Team />

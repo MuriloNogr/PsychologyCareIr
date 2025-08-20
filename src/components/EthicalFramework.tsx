@@ -16,8 +16,8 @@ const EthicalFramework = () => {
                 <span className="flex gap-x-6">
                   <ShieldCheck className="ethical-icon" />
                   <span className="grow">
-                    <span className="ethical-tab-title">Informed Consent</span>
-                    <span className="ethical-tab-desc">Clear explanation of procedures and purpose.</span>
+                    <span className="ethical-tab-title">Informed Consent:</span>
+                    <span className="ethical-tab-desc"> Clear explanation of procedures and purpose.</span>
                   </span>
                 </span>
                             </button>
@@ -25,8 +25,8 @@ const EthicalFramework = () => {
                 <span className="flex gap-x-6">
                   <EyeOff className="ethical-icon" />
                   <span className="grow">
-                    <span className="ethical-tab-title">Confidentiality</span>
-                    <span className="ethical-tab-desc">Strict adherence to GDPR; no disclosure without written consent.</span>
+                    <span className="ethical-tab-title">Confidentiality:</span>
+                    <span className="ethical-tab-desc"> Strict adherence to GDPR; no disclosure without written consent.</span>
                   </span>
                 </span>
                             </button>
@@ -34,8 +34,8 @@ const EthicalFramework = () => {
                 <span className="flex gap-x-6">
                   <Scale className="ethical-icon" />
                   <span className="grow">
-                    <span className="ethical-tab-title">Fairness</span>
-                    <span className="ethical-tab-desc">Unbiased, culturally adapted evaluations.</span>
+                    <span className="ethical-tab-title">Fairness:</span>
+                    <span className="ethical-tab-desc"> Unbiased, culturally adapted evaluations.</span>
                   </span>
                 </span>
                             </button>
@@ -43,8 +43,8 @@ const EthicalFramework = () => {
                 <span className="flex gap-x-6">
                   <GraduationCap className="ethical-icon" />
                   <span className="grow">
-                    <span className="ethical-tab-title">Competence</span>
-                    <span className="ethical-tab-desc">Licensed psychologists using evidence-based methods.</span>
+                    <span className="ethical-tab-title">Competence:</span>
+                    <span className="ethical-tab-desc"> Licensed psychologists using evidence-based methods.</span>
                   </span>
                 </span>
                             </button>

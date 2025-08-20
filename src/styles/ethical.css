@@ -11,7 +11,6 @@
 }
 
 .ethical-grid {
-    position: relative;
     display: grid;
     gap: 4rem;
     grid-template-columns: 1fr;
@@ -24,32 +23,32 @@
     }
 
     .ethical-tabs {
-        grid-column: span 6 / span 6;
-        grid-column-start: 8;
+        grid-column: span 8 / span 8;
+        grid-column-start: 6;
         order: 2;
     }
 
     .ethical-image-wrapper {
-        grid-column: span 6 / span 6;
+        grid-column: span 4 / span 4;
     }
 }
 
 .ethical-title {
-    font-size: 1.875rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: #ffffff; /* Agora branco real */
+    color: #ffffff;
+    margin-bottom: 1.5rem;
 }
 
 .ethical-tab-list {
     display: grid;
-    gap: 1rem;
-    margin-top: 2rem;
+    gap: 1.25rem;
 }
 
 .ethical-tab {
     display: flex;
     gap: 1.5rem;
-    padding: 1.25rem;
+    padding: 1.5rem;
     border-radius: 0.75rem;
     background-color: transparent;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -68,18 +67,22 @@
 }
 
 .ethical-icon {
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
     color: #ffffff;
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
 }
 
 .ethical-tab-title {
-    font-size: 1.125rem;
-    font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: #ffffff;
 }
 
 .ethical-tab-desc {
     margin-top: 0.25rem;
+    font-size: 1.1rem;
     color: #ffffff;
 }
 
@@ -89,8 +92,9 @@
 }
 
 .ethical-image {
-    border-radius: 0;
-    box-shadow: none;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
 }
 
 .ethical-svg {

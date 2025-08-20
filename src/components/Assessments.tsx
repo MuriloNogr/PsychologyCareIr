@@ -130,7 +130,7 @@ const Assessments = () => {
                                     <Lottie
                                         animationData={animationToRender}
                                         loop
-                                        style={{ width: 250, height: 250 }}
+                                        style={{width: 250, height: 250}}
                                     />
                                 ) : null}
                             </div>
@@ -142,6 +142,11 @@ const Assessments = () => {
                         </Link>
                     );
                 })}
+            </div>
+            <div className="note-container">
+                <p className="note-text">
+                    <span className="note-highlight">Our goal is to provide precise, actionable insights that empower clients to thrive.</span>
+                </p>
             </div>
         </section>
     );

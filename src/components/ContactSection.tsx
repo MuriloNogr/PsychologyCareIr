@@ -16,7 +16,7 @@ const ContactSection = () => {
 
                 <p className="contact-line">
                     <Phone className="contact-icon" />
-                    087-1164550
+                    086-7809746
                 </p>
 
                 <p className="contact-line">
@@ -32,8 +32,8 @@ const ContactSection = () => {
 
             <div className="contact-map">
                 <iframe
-                    title="Google Maps - Kilrush"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2403.878031979698!2d-9.484779223304314!3d52.63908667202043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b57ee7a6d51e3%3A0x1dbd0f3de1b2cb54!2sMoore%20St%2C%20Kilrush%2C%20Co.%20Clare%2C%20Ireland!5e0!3m2!1sen!2sie!4v1692152548761!5m2!1sen!2sie"
+                    title="Google Maps - V15 VE08"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d952.470642917784!2d-9.486083!3d52.638972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b57ec066e62d9%3A0xb3be22d319d3a9b3!2sV15%20VE08!5e0!3m2!1sen!2sie!4v1692152548761!5m2!1sen!2sie"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     allowFullScreen

@@ -23,7 +23,7 @@ const Hero = () => {
                     </div>
 
                     <p className="shiny-text text-lg md:text-xl font-semibold text-center max-w-4xl">
-                        We provide specialized assessment services in clinical psychology, focusing on emotional, behavioral, and psychological well-being; clinical neuropsychology, evaluating cognitive functions such as memory, attention, and executive skills; and educational psychology, addressing core academic skills like reading, writing, comprehension, and mathematical reasoning to identify unique learning needs and challenges.
+                        Comprehensive Psychological Assessment Services
                     </p>
 
                     <div className="hero-btn-container">
