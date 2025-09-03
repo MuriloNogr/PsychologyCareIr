@@ -36,14 +36,11 @@ const Hero = () => {
             const MAX = 64;   // px máximo razoável em telas grandes
             fontSize = clamp(fontSize, MIN, MAX);
 
-            // Aplica uma redução progressiva enquanto:
-            // - o conteúdo estiver maior que a área disponível OU
-            // - a altura do título exceder uma linha (quebra)
+            // Função que verifica se cabe em uma linha e na largura disponível
             const fits = () =>
                 titleEl.scrollWidth <= available && titleEl.clientHeight <= lineHeight * 1.25;
 
             // Primeiro, tenta aumentar um pouquinho (caso tenha margem) até o teto
-            let grew = false;
             while (fontSize < MAX) {
                 titleEl.style.fontSize = `${fontSize + 1}px`;
                 if (!fits()) {
@@ -52,10 +49,9 @@ const Hero = () => {
                     break;
                 }
                 fontSize += 1;
-                grew = true;
             }
 
-            // Se não coube (ou não cresceu), reduz até caber
+            // Se não coube, reduz até caber
             while (!fits() && fontSize > MIN) {
                 fontSize -= 1;
                 titleEl.style.fontSize = `${fontSize}px`;
