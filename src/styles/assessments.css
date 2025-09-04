@@ -1,82 +1,19 @@
 @import "./tailwind.css";
 
-/* Estrutura geral da seção */
+/* Seção geral */
 .assessments-section {
-    @apply py-16 px-6 text-black;
+    @apply text-white;
 }
 
+/* Título grande */
 .assessments-title {
-    @apply text-3xl font-bold mb-8 mt-12 text-white;
+    @apply text-4xl sm:text-5xl md:text-6xl font-bold mb-10 mt-2;
 }
 
-.assessments-grid {
-    @apply grid grid-cols-1 md:grid-cols-3 gap-8;
-}
-
-/* Configuração geral do Card */
-.assessment-card {
-    @apply relative bg-white border border-gray-300 rounded-lg shadow-lg p-6 flex flex-col overflow-hidden
-    transition-transform duration-300 transform cursor-pointer;
-}
-
-/* Fundo gradiente dinâmico */
-.assessment-gradient {
-    @apply absolute inset-0 opacity-50 transition-opacity duration-500;
-    background: linear-gradient(135deg, #b2677c, #d58d9f, #b2c4fd, #3a385d);
-    filter: blur(100px);
-}
-
-.assessment-card:hover .assessment-gradient {
-    opacity: 0.8;
-    filter: blur(60px);
-}
-
-/* Imagem */
-.assessment-image {
-    @apply flex justify-center mb-4 relative z-10;
-}
-
-.assessment-img {
-    @apply object-contain w-auto h-auto;
-}
-
-/* Título */
-.assessment-title {
-    @apply text-xl font-semibold mb-2 text-left relative z-10;
-}
-
-/* Descrição */
-.assessment-description {
-    @apply text-gray-700 text-left relative z-10;
-}
-
-/* See More */
-.see-more {
-    @apply absolute bottom-4 right-4 text-[#3a385d] font-semibold text-sm opacity-0 transition-opacity duration-300;
-}
-
-.arrow {
-    @apply inline-block transition-transform duration-300;
-}
-
-.assessment-card:hover .see-more {
-    @apply opacity-100;
-}
-
-.assessment-card:hover .arrow {
-    transform: translateX(4px);
-}
-
-/* Efeito hover e automático */
-.assessment-card:hover,
-.assessment-card.flash-hover {
-    @apply -translate-y-2 shadow-xl transition-all duration-500;
-}
-
-.assessment-card.flash-hover .see-more {
-    @apply opacity-100;
-}
-
-.assessment-card.flash-hover .arrow {
-    transform: translateX(4px);
+/* Nota/CTA */
+.note-container { @apply mt-12; }
+.note-text { @apply text-center; }
+.note-highlight {
+    @apply inline-block rounded-2xl px-6 py-5 text-base sm:text-lg md:text-xl text-white/90
+    ring-1 ring-white/10 bg-white/5 backdrop-blur-sm;
 }
