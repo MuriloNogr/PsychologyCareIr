@@ -19,7 +19,7 @@ const members: Member[] = [
     {
         name: "Vanessa Clyne",
         role: "Psychologist & Assessment Specialist",
-        src: "/ImagePlaceholder.png",
+        src: "/VanessaClyne.jpeg",
         ctaText: "Saiba mais",
         ctaLink: "#",
         content: () => (
@@ -46,7 +46,7 @@ const members: Member[] = [
     {
         name: "Mervyn Clyne",
         role: "Administration & Quality Control",
-        src: "/ImagePlaceholder.png",
+        src: "/MervynClyne.jpeg",
         ctaText: "Saiba mais",
         ctaLink: "#",
         content: () => (

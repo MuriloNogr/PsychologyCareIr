@@ -1,81 +1,80 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
-import { WobbleCard } from "@/components/ui/wobble-card";
-import { Clock } from "lucide-react"; // ícone do timeline
-import "@/styles/process.css"; // já deve estar importado
+import { MessageSquare, FlaskConical, FileText, Timer } from "lucide-react";
 
-const AssessmentProcess = () => {
+export default function AssessmentProcess() {
     return (
-        <section className="w-full px-4 py-16 text-white">
-            <h2 className="text-3xl font-bold text-center text-[#d58d9f] mb-10">
-                The Assessment Process
-            </h2>
+        <section className="w-full py-20 px-4 text-white">
+            <div className="max-w-5xl mx-auto">
+                <h2 className="text-4xl font-bold text-center text-[#d58d9f] mb-16">
+                    The Assessment Process
+                </h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
-                {/* Card 1 */}
-                <WobbleCard containerClassName="col-span-1 lg:col-span-2 min-h-[300px] bg-[#b2677c] relative overflow-hidden">
-                    <div className="max-w-lg z-10 relative">
-                        <h3 className="text-2xl font-semibold">
-                            1. Initial Consultation (1 hour)
-                        </h3>
-                        <p className="mt-4 text-white/90">
-                            Discussion of concerns, history, and goals.
-                        </p>
+                <div>
+                    {/* Step 1 — Initial Consultation */}
+                    <div className="group relative flex gap-x-6">
+                        <div className="relative group-last:after:hidden after:absolute after:top-10 after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-px after:bg-[#d58d9f]/60">
+                            <div className="relative z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[#d58d9f] shadow ring-2 ring-white/10">
+                                <MessageSquare className="size-5 text-white" />
+                            </div>
+                        </div>
+                        <div className="grow pb-16 group-last:pb-0">
+                            <h3 className="mb-1 text-sm font-medium text-[#d58d9f]">Step 1</h3>
+                            <p className="font-semibold text-base">Initial Consultation (1 hour)</p>
+                            <p className="mt-2 text-sm text-white/80">
+                                Discussion of concerns, history, and goals.
+                            </p>
+                        </div>
                     </div>
-                    <div className="absolute -right-10 bottom-0 w-[400px] h-[240px]">
-                        <Image
-                            src="/process1.png"
-                            alt="Step 1"
-                            fill
-                            className="object-contain rounded-2xl"
-                        />
-                    </div>
-                </WobbleCard>
 
-                {/* Card 2 */}
-                <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-[#b2c4fd]">
-                    <div className="max-w-lg text-[#3a385d]">
-                        <h3 className="text-2xl font-semibold">
-                            2. Testing & Analysis (6+ hours)
-                        </h3>
-                        <p className="mt-4">
-                            Standardized assessments, interviews, and clinical interpretation.
-                        </p>
+                    {/* Step 2 — Testing & Analysis */}
+                    <div className="group relative flex gap-x-6">
+                        <div className="relative group-last:after:hidden after:absolute after:top-10 after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-px after:bg-[#d58d9f]/60">
+                            <div className="relative z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[#d58d9f] shadow ring-2 ring-white/10">
+                                <FlaskConical className="size-5 text-white" />
+                            </div>
+                        </div>
+                        <div className="grow pb-16 group-last:pb-0">
+                            <h3 className="mb-1 text-sm font-medium text-[#d58d9f]">Step 2</h3>
+                            <p className="font-semibold text-base">Testing & Analysis (6+ hours)</p>
+                            <p className="mt-2 text-sm text-white/80">
+                                Standardized assessments, interviews, and clinical interpretation.
+                            </p>
+                        </div>
                     </div>
-                </WobbleCard>
 
-                {/* Card 3 */}
-                <WobbleCard containerClassName="col-span-1 lg:col-span-3 min-h-[300px] bg-[#d58d9f] relative overflow-hidden">
-                    <div className="max-w-lg z-10 relative">
-                        <h3 className="text-2xl font-semibold">
-                            3. Feedback & Report (1-hour session + 5–10h drafting)
-                        </h3>
-                        <p className="mt-4 text-white/90">
-                            Includes detailed findings, diagnoses (if applicable), and tailored recommendations.
-                        </p>
+                    {/* Step 3 — Feedback & Report */}
+                    <div className="group relative flex gap-x-6">
+                        <div className="relative group-last:after:hidden after:absolute after:top-10 after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-px after:bg-[#d58d9f]/60">
+                            <div className="relative z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[#d58d9f] shadow ring-2 ring-white/10">
+                                <FileText className="size-5 text-white" />
+                            </div>
+                        </div>
+                        <div className="grow pb-16 group-last:pb-0">
+                            <h3 className="mb-1 text-sm font-medium text-[#d58d9f]">Step 3</h3>
+                            <p className="font-semibold text-base">
+                                Feedback & Report (1-hour session + 5–10h drafting)
+                            </p>
+                            <p className="mt-2 text-sm text-white/80">
+                                Includes detailed findings, diagnoses (if applicable), and tailored recommendations.
+                            </p>
+                        </div>
                     </div>
-                    <div className="absolute -right-10 bottom-0 w-[400px] h-[240px]">
-                        <Image
-                            src="/process1.png"
-                            alt="Step 3"
-                            fill
-                            className="object-contain rounded-2xl"
-                        />
-                    </div>
-                </WobbleCard>
-            </div>
 
-            {/* Novo bloco Timeline */}
-            <div className="timeline-box mt-10">
-                <Clock className="timeline-icon" />
-                <p className="timeline-text">
-                    <span className="timeline-highlight">Timeline:</span> 60–90 days for completion.
-                </p>
+                    {/* Step 4 — Timeline */}
+                    <div className="group relative flex gap-x-6">
+                        <div className="relative">
+                            <div className="relative z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[#d58d9f] shadow ring-2 ring-white/10">
+                                <Timer className="size-5 text-white" />
+                            </div>
+                        </div>
+                        <div className="grow">
+                            <h3 className="mb-1 text-sm font-medium text-[#d58d9f]">Timeline</h3>
+                            <p className="font-semibold text-base">60–90 days for completion</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     );
-};
-
-export default AssessmentProcess;
+}

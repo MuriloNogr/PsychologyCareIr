@@ -1,124 +1,29 @@
-.process-section {
-  padding: 4rem 1rem;
-  text-align: center;
-}
-
-.process-title {
-  font-size: 2rem;
-  color: #d58d9f;
-  font-weight: bold;
-  margin-bottom: 3rem;
-}
-
-.process-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 1024px) {
-  .process-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.process-card {
+/* Linha vertical do Preline */
+.timeline-line {
   position: relative;
-  border-radius: 1rem;
-  padding: 2rem;
-  min-height: 300px;
-  overflow: hidden;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+}
+.timeline-line::after {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  bottom: 0.5rem;
+  left: 0.75rem;
+  width: 2px;
+  background-color: rgba(213, 141, 159, 0.6); /* rosa claro translúcido */
+}
+.group:last-child .timeline-line::after {
+  display: none;
 }
 
-.process-number {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  color: white;
-  font-weight: bold;
+/* Ícones redondos */
+.timeline-icon {
+  position: relative;
+  z-index: 10;
   width: 2rem;
   height: 2rem;
   border-radius: 9999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.875rem;
-}
-
-.process-content {
-  text-align: left;
-}
-
-.process-step-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 0.75rem;
-}
-
-.process-step-text {
-  font-size: 1rem;
-  color: #f1f1f1;
-}
-
-.process-image {
-  width: 100px;
-  height: auto;
-  align-self: flex-end;
-  margin-top: 1.5rem;
-}
-
-.process-timeline-info {
-  margin-top: 3rem;
-  font-size: 1rem;
-  color: #d58d9f;
-}
-
-.timeline-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  max-width: 960px;
-  margin: 2.5rem auto 0;
-  padding: 1.5rem 2rem;
-  background-color: #3a385d;
-  border-radius: 1rem;
-  position: relative;
-  isolation: isolate;
-}
-
-.timeline-box::before {
-  content: "";
-  position: absolute;
-  left: 1.5rem;
-  width: 0.4rem;
-  height: 80%;
-  background-color: #d58d9f;
-  z-index: 10;
-  border-radius: 9999px;
-}
-
-.timeline-icon {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  color: #d58d9f;
-  z-index: 20;
-}
-
-.timeline-text {
-  color: #f0f0f0;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  white-space: pre-wrap;
-  z-index: 20;
-}
-
-.timeline-highlight {
-  font-weight: 700;
-  color: #d58d9f;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
 }
