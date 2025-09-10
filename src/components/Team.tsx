@@ -76,7 +76,6 @@ export default function Team() {
         return () => window.removeEventListener("keydown", onKeyDown);
     }, [active]);
 
-
     // @ts-expect-error - Gambiarra
     useOutsideClick(ref, () => setActive(null));
 
@@ -110,14 +109,19 @@ export default function Team() {
                         <motion.div
                             layoutId={`card-${active.name}-${id}`}
                             ref={ref}
-                            className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 rounded-3xl overflow-hidden"
+                            className="w-full max-w-[800px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 rounded-3xl overflow-hidden"
                         >
-                            <motion.div layoutId={`image-${active.name}-${id}`} className="w-full h-80 relative">
+                            {/* Modal imagem */}
+                            <motion.div
+                                layoutId={`image-${active.name}-${id}`}
+                                className="team-modal-img-wrapper"
+                            >
                                 <Image
                                     src={active.src}
                                     alt={active.name}
-                                    fill
-                                    className="object-cover object-top rounded-t-3xl"
+                                    width={1200}
+                                    height={1600}
+                                    className="team-modal-img"
                                 />
                             </motion.div>
                             <div className="p-6">
@@ -155,12 +159,16 @@ export default function Team() {
                             onClick={() => setActive(member)}
                             className="team-card text-center cursor-pointer w-[280px] md:w-[340px]"
                         >
-                            <motion.div layoutId={`image-${member.name}-${id}`} className="relative w-full h-48 md:h-60">
+                            {/* Thumbnail */}
+                            <motion.div
+                                layoutId={`image-${member.name}-${id}`}
+                                className="team-thumb"
+                            >
                                 <Image
                                     src={member.src}
                                     alt={member.name}
                                     fill
-                                    className="rounded-xl object-cover object-top"
+                                    className="team-thumb-img"
                                 />
                             </motion.div>
                             <div className="mt-4">

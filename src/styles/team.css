@@ -1,67 +1,4 @@
-.process-section {
-    padding: 4rem 1rem;
-    background-color: #3a385d; /* azul escuro */
-    color: #fff;
-    text-align: center;
-}
-
-.process-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #d58d9f; /* rosa claro */
-    margin-bottom: 3rem;
-}
-
-.process-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    align-items: stretch;
-}
-
-.process-card {
-    border-radius: 1rem;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
-    text-align: left;
-    min-height: 320px;
-}
-
-.process-number {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background-color: #3a385d;
-    color: white;
-    border-radius: 50%;
-    width: 1.75rem;
-    height: 1.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-}
-
-.process-image {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    width: 100px;
-    height: auto;
-    opacity: 0.9;
-    border-radius: 0.5rem;
-}
-
-.process-timeline-info {
-    margin-top: 2.5rem;
-    color: #d58d9f;
-    font-weight: 500;
-}
-
+/* === CARD PADRÃO === */
 .team-card {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     border-radius: 0.75rem;
@@ -72,3 +9,41 @@
     transform: translateY(-6px);
     box-shadow: 0 12px 24px rgba(213, 141, 159, 0.15);
 }
+
+/* === MINIATURA (cards da lista) === */
+.team-thumb {
+    position: relative;
+    width: 100%;
+    height: 14rem; /* aumentei de 13rem para 14rem */
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .team-thumb {
+        height: 17rem; /* aumentei de 16rem para 17rem */
+    }
+}
+
+.team-thumb-img {
+    object-fit: cover !important;        /* corta e preenche */
+    object-position: top center !important; /* dá prioridade ao topo (testa visível) */
+}
+
+
+/* === MODAL (imagem expandida) === */
+.team-modal-img-wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-modal-img {
+    object-fit: contain !important; /* mostra inteira */
+    width: 100% !important;
+    height: auto !important;
+    max-height: 65vh; /* antes 80vh → agora menor p/ caber o texto */
+}
+
