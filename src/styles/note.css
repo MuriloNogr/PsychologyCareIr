@@ -1,4 +1,4 @@
-.note-container {
+.note-container1 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -12,7 +12,7 @@
     isolation: isolate;
 }
 
-.note-container::before {
+.note-container1::before {
     content: "";
     position: absolute;
     left: 1.5rem;
@@ -23,14 +23,64 @@
     border-radius: 9999px;
 }
 
-.note-text {
+.note-text1 {
     color: #f0f0f0;
     font-size: 1.125rem; /* text-lg */
     line-height: 1.75rem;
     white-space: pre-wrap;
 }
 
-.note-highlight {
+.note-highlight1 {
     font-weight: 700;
     color: #b2c4fd;
+}
+
+.note-section {
+    padding: 6rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.note-container {
+    max-width: 900px;
+    background: #2e2c4a; /* tom mais claro do fundo */
+    border-radius: 1.5rem;
+    padding: 3rem;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+.note-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d58d9f; /* rosa claro */
+    margin-bottom: 2rem;
+}
+
+.note-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.note-card {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: #3a385d;
+    border-left: 6px solid #d58d9f; /* destaque rosa */
+    border-radius: 1rem;
+    text-align: left;
+}
+
+.note-subtitle {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #b2c4fd; /* azul suave */
+}
+
+.highlight {
+    color: #d58d9f; /* rosa claro para dar ênfase */
+    font-weight: 600;
 }

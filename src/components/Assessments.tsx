@@ -40,7 +40,7 @@ export default function Assessments() {
             description:
                 "Comprehensive evaluations of emotional, behavioral, and mental health concerns to guide therapeutic interventions",
             details: (
-                <div className="space-y-3 text-neutral-200/90 bg-3a385d">
+                <div className="space-y-3 text-neutral-200/90 bg-2e2c4a">
                     <p className="font-semibold text-[#d58d9f]">
                         The conditions assessed include, but are not limited to:
                     </p>
@@ -208,9 +208,9 @@ export default function Assessments() {
                     </div>
 
                     {/* Nota */}
-                    <div className="note-container">
-                        <p className="note-text">
-              <span className="note-highlight">
+                    <div className="note-container1">
+                        <p className="note-text1">
+              <span className="note-highlight1">
                 Our goal is to provide precise, actionable insights that empower clients to thrive.
               </span>
                         </p>
