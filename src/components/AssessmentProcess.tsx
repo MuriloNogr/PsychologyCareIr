@@ -1,10 +1,11 @@
 "use client";
 
 import { MessageSquare, FlaskConical, FileText, Timer } from "lucide-react";
+import "@/styles/process.css";
 
 export default function AssessmentProcess() {
     return (
-        <section className="w-full py-20 px-4 text-white">
+        <section id="process" className="w-full py-20 px-4 text-white">
             <div className="max-w-5xl mx-auto">
                 <h2 className="text-4xl font-bold text-center text-[#d58d9f] mb-16">
                     The Assessment Process

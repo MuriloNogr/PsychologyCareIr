@@ -1,4 +1,11 @@
 /* Linha vertical do Preline */
+
+/* Deixe isso no seu CSS global ou no mesmo arquivo do componente */
+html { scroll-behavior: smooth; } /* opcional, só pra suavizar */
+
+#process {
+  scroll-margin-top: 30vh; /* ajuste entre 40–60vh conforme o layout */
+}
 .timeline-line {
   position: relative;
 }

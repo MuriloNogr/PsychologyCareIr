@@ -6,6 +6,10 @@
     /*background-color: #3a385d !important;*/
 }
 
+#conditions {
+    scroll-margin-top: 50vh; /* Ajusta a posição para o meio da tela */
+}
+
 /* Título da seção */
 .conditions-title {
     @apply text-3xl md:text-4xl font-bold text-center mb-12 text-[#d58d9f];

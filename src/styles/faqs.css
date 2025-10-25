@@ -1,4 +1,10 @@
 /* faqs.css */
+
+#faqs {
+    scroll-margin-top: 30vh; /* ajuste entre 40–60vh conforme o layout */
+
+}
+
 .faq-section {
     padding: 4rem 1rem;
     color: white;

@@ -33,7 +33,7 @@ const faqs = [
 
 export default function Faqs() {
     return (
-        <section className="faq-section">
+        <section id="faqs" className="faq-section">
             <div className="faq-grid">
                 <div className="faq-intro">
                     <h2 className="faq-title">

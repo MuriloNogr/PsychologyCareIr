@@ -10,7 +10,7 @@ import "@/styles/principles.css";
 
 const KeyPrinciples = () => {
     return (
-        <section className="keyprinciples-section">
+        <section id="principles" className="keyprinciples-section">
             <h2 className="keyprinciples-heading">Key Principles</h2>
 
             <div className="keyprinciples-grid">

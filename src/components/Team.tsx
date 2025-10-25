@@ -146,7 +146,7 @@ export default function Team() {
                 )}
             </AnimatePresence>
 
-            <section className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+            <section id="team" className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
                 <div className="max-w-2xl mx-auto text-center mb-10">
                     <h2 className="text-3xl font-bold md:text-5xl text-white">Our team</h2>
                 </div>

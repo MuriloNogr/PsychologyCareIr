@@ -5,6 +5,11 @@
     @apply text-white;
 }
 
+#assessments {
+    scroll-margin-top: 50vh; /* Ajusta a posição para o meio da tela */
+}
+
+
 /* Título grande */
 .assessments-title {
     @apply text-4xl sm:text-5xl md:text-6xl font-bold mb-10 mt-2;

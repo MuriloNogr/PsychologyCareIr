@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, Target, Brain, Eye, Users, HelpCircle, Mail } from "lucide-react";
+import { Menu, Target, Brain, Eye, Users, HelpCircle, Mail, Clock, HandHeart} from "lucide-react";
 import "@/styles/header.css";
 
 const Header = () => {
@@ -39,42 +39,60 @@ const Header = () => {
                 <nav className="nav-container">
                     <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2">
                         <Link
-                            href="#home"
+                            href="#assessments"
                             className="py-1.5 px-2.5 inline-flex items-center gap-x-1.5 text-sm text-white bg-[#b2677c] hover:bg-[#9e5a6c] rounded-lg"
                         >
                             <Menu className="size-4" />
                             Services
                         </Link>
                         <Link
-                            href="#services"
-                            className="py-1.5 px-2.5 inline-flex items-center gap-x-1.5 text-sm text-white bg-[#b2677c] hover:bg-[#9e5a6c] rounded-lg"
-                        >
-                            <Target className="size-4" />
-                            Principles
-                        </Link>
-                        <Link
-                            href="#about"
+                            href="#conditions"
                             className="py-1.5 px-2.5 inline-flex items-center gap-x-1.5 text-sm text-white bg-[#b2677c] hover:bg-[#9e5a6c] rounded-lg"
                         >
                             <Brain className="size-4" />
                             Conditions
                         </Link>
+
                         <Link
-                            href="#contact"
+                            href="#principles"
+                            className="py-1.5 px-2.5 inline-flex items-center gap-x-1.5 text-sm text-white bg-[#b2677c] hover:bg-[#9e5a6c] rounded-lg"
+                        >
+                            <Target className="size-4" />
+                            Principles
+                        </Link>
+
+                        <Link
+                            href="#process"
+                            className="py-1.5 px-2.5 inline-flex items-center gap-x-1.5 text-sm text-white bg-[#b2677c] hover:bg-[#9e5a6c] rounded-lg"
+                        >
+                            <Clock className="size-4"/>
+                            Process
+                        </Link>
+
+                        <Link
+                            href="#approach"
+                            className="py-1.5 px-2.5 inline-flex items-center gap-x-1.5 text-sm text-white bg-[#b2677c] hover:bg-[#9e5a6c] rounded-lg"
+                        >
+                            <HandHeart className="size-4" />
+                            Our approach
+                        </Link>
+
+                        <Link
+                            href="#ethic"
                             className="py-1.5 px-2.5 inline-flex items-center gap-x-1.5 text-sm text-white bg-[#b2677c] hover:bg-[#9e5a6c] rounded-lg"
                         >
                             <Eye className="size-4" />
                             Ethic
                         </Link>
                         <Link
-                            href="#contact"
+                            href="#team"
                             className="py-1.5 px-2.5 inline-flex items-center gap-x-1.5 text-sm text-white bg-[#b2677c] hover:bg-[#9e5a6c] rounded-lg"
                         >
                             <Users className="size-4" />
                             Team
                         </Link>
                         <Link
-                            href="#contact"
+                            href="#faqs"
                             className="py-1.5 px-2.5 inline-flex items-center gap-x-1.5 text-sm text-white bg-[#b2677c] hover:bg-[#9e5a6c] rounded-lg"
                         >
                             <HelpCircle className="size-4" />

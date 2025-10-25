@@ -1,3 +1,7 @@
+#ethic {
+    scroll-margin-top: 30vh; /* Ajusta a posição para o meio da tela */
+}
+
 .ethical-section {
     position: relative;
     padding: 2.5rem 1rem;

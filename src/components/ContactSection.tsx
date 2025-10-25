@@ -10,7 +10,7 @@ import "@/styles/contact.css";
 
 const ContactSection = () => {
     return (
-        <section className="contact-section">
+        <section id="contact" className="contact-section">
             <div className="contact-info">
                 <h2 className="contact-title">Contact</h2>
 

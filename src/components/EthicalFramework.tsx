@@ -6,7 +6,7 @@ import "@/styles/ethical.css";
 
 const EthicalFramework = () => {
     return (
-        <section className="ethical-section">
+        <section id="ethic" className="ethical-section">
             <div className="ethical-wrapper">
                 <div className="ethical-grid">
                     <div className="ethical-tabs">

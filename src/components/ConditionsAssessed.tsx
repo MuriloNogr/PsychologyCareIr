@@ -4,7 +4,7 @@ import "@/styles/conditions.css";
 
 const ConditionsAssessed = () => {
     return (
-        <section className="conditions-section">
+        <section id="conditions" className="conditions-section">
             <h2 className="conditions-title">Conditions Assessed</h2>
             <div className="conditions-grid">
                 {/* Card 1 */}

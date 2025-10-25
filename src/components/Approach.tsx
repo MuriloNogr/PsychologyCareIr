@@ -6,7 +6,7 @@ import { ShieldCheck, Lock, CheckCircle } from "lucide-react";
 
 const Approach = () => {
     return (
-        <section className="approach-section">
+        <section id="approach" className="approach-section">
             <div className="approach-wrapper">
                 <h2 className="approach-title">Clarity Through Expert Assessment</h2>
                 <p className="approach-intro">
