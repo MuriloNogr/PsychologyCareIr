@@ -6,6 +6,7 @@
     height: 200px;
 }
 
+/* ======== Header existente (inalterado) ======== */
 .header {
     @apply fixed top-0 left-0 w-full z-50 py-5 px-6 transition-all duration-500 flex justify-between items-center opacity-0 pointer-events-none;
     background: transparent;
@@ -45,3 +46,116 @@
 .nav-button svg {
     @apply text-[#b2c4fd] size-4;
 }
+
+/* ======== NOVO: Burger + Drawer (default escondidos) ======== */
+.burger-btn {
+    display: none;               /* só aparece <= 1135px */
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: #b2677c;         /* rosa queimado do projeto */
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.12);
+    transition: filter .2s ease, transform .08s ease;
+}
+.burger-btn:hover { filter: brightness(0.95); }
+.burger-btn:active { transform: scale(0.98); }
+.burger-btn .icon { width: 22px; height: 22px; }
+
+/* Overlay do drawer */
+.header-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+    z-index: 60;
+}
+.header-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Gaveta lateral esquerda */
+.header-drawer {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 280px;
+    max-width: 85vw;
+    height: 100vh;
+    background: #3a385d; /* fundo principal do projeto */
+    box-shadow: 6px 0 24px rgba(0,0,0,.35);
+    transform: translateX(-100%);
+    transition: transform .28s cubic-bezier(.22,.61,.36,1);
+    border-right: 1px solid rgba(178,196,253,0.14);
+    z-index: 70;
+}
+.header-drawer.open {
+    transform: translateX(0);
+}
+
+.header-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem .9rem;
+    border-bottom: 1px solid rgba(178,196,253,0.12);
+}
+.header-drawer-close {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #d58d9f; /* rosa claro */
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.header-drawer-close .icon { width: 20px; height: 20px; }
+
+.header-drawer-nav {
+    display: grid;
+    gap: .25rem;
+    padding: .75rem;
+}
+.header-drawer-nav a {
+    display: flex;
+    align-items: center;
+    padding: .75rem .75rem;
+    border-radius: .7rem;
+    color: #fff;
+    font-size: .98rem;
+    border: 1px solid transparent;
+    transition: background .18s ease, border-color .2s ease;
+}
+.header-drawer-nav a:hover {
+    background: rgba(213,141,159,.15);           /* pink translúcido */
+    border-color: rgba(178,196,253,.18);          /* soft blue */
+}
+.header-drawer-nav a .icon-left {
+    width: 16px; height: 16px; margin-right: .5rem; color: #b2c4fd;
+}
+
+/* Foco acessível */
+.nav-button:focus-visible,
+.burger-btn:focus-visible,
+.header-drawer-close:focus-visible,
+.header-drawer-nav a:focus-visible {
+    outline: 2px solid #b2c4fd;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(178,196,253,.25);
+}
+
+/* ======== Media query principal ======== */
+/* Até 1135px: esconder navegação atual e mostrar burger */
+@media (max-width: 1135px) {
+    .nav-container { display: none; }
+    .burger-btn { display: inline-flex; }
+}
+
+/* (Opcional) rolamento suave para âncoras */
+html { scroll-behavior: smooth; }
