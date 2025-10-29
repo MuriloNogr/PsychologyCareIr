@@ -77,7 +77,7 @@ const Hero = () => {
             {/* Logo no topo em mobile/tablet */}
             <div className="hero-mobile-brand">
                 <img
-                    src="/MidWestlogo.png"
+                    src="/midwest-logo.png"
                     alt="Midwest Psychological Assessments logo"
                     className="hero-mobile-logo"
                     width={160}
