@@ -1,94 +1,60 @@
 @import "./tailwind.css";
 
-/* === Seção principal com fundo === */
+/* === Seção principal com fundo (desktop) === */
 .hero {
     @apply relative w-full h-screen flex items-center justify-start overflow-hidden;
     background-image: url("/banner1.png");
     background-size: cover;
     background-position: center;
+    z-index: 10;
 }
 
 /* === Variável da zona segura (largura do desenho à esquerda) === */
-:root {
-    /* Notebook 1920×1080 (ex.: Lenovo IdeaPad Gaming 3i) */
-    --safe-left: 430px;
-}
+:root { --safe-left: 430px; }
 
-/* Ajustes por breakpoints para aproximar ao máximo sem sobrepor */
-@media (max-width: 1700px) {
-    :root { --safe-left: 400px; }
-}
-@media (max-width: 1536px) {
-    :root { --safe-left: 380px; }
-}
-@media (max-width: 1440px) {
-    :root { --safe-left: 360px; }
-}
-@media (max-width: 1366px) {
-    :root { --safe-left: 340px; }
-}
-@media (max-width: 1280px) {
-    :root { --safe-left: 320px; }
-}
-@media (max-width: 1152px) {
-    :root { --safe-left: 300px; }
-}
-@media (max-width: 1024px) {
-    :root { --safe-left: 280px; }
-}
-/* Em telas menores que isso, geralmente o layout muda — mas ainda garantimos o não-sobrepor */
-@media (max-width: 900px) {
-    :root { --safe-left: 240px; }
-}
+/* Ajustes por breakpoints (desktop) */
+@media (max-width: 1700px) { :root { --safe-left: 400px; } }
+@media (max-width: 1536px) { :root { --safe-left: 380px; } }
+@media (max-width: 1440px) { :root { --safe-left: 360px; } }
+@media (max-width: 1366px) { :root { --safe-left: 340px; } }
+@media (max-width: 1280px) { :root { --safe-left: 320px; } }
+@media (max-width: 1152px) { :root { --safe-left: 300px; } }
+@media (max-width: 1024px) { :root { --safe-left: 280px; } }
+@media (max-width: 900px)  { :root { --safe-left: 240px; } }
 
-/* === Camada escura por cima da imagem === */
+/* === Overlay (desktop) === */
 .hero-overlay {
     @apply w-full h-full bg-black bg-opacity-30 flex items-center;
 }
 
-/* === Container de texto (nunca invade a área do desenho) === */
+/* === Container de texto (desktop) === */
 .hero-text {
     @apply text-white relative z-10 space-y-6 opacity-0 translate-y-10 transition-all duration-1000 ease-out;
-    /* Empurra o bloco para a direita do desenho */
     margin-left: var(--safe-left);
-    /* Garante que só use o espaço à direita da linha imaginária */
     max-width: calc(100vw - var(--safe-left) - 4vw);
     padding: 2rem 4vw;
     text-align: center;
-    /* Evita qualquer overflow “escapar” para a esquerda */
     overflow: visible;
 }
+.hero-text.fade-in { @apply opacity-100 translate-y-0; }
 
-/* Animação de entrada */
-.hero-text.fade-in {
-    @apply opacity-100 translate-y-0;
-}
-
-/* === Título (sempre em uma linha) === */
+/* === Título === */
 .hero-title {
     font-weight: 800;
     text-align: center;
     line-height: 1.15;
-    white-space: nowrap;            /* Nunca quebrar */
-    overflow: hidden;               /* Previne estourar a caixa */
-    text-overflow: clip;            /* Sem reticências por padrão */
-    /* Base responsiva; o JS abaixo vai reduzir se necessário */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
     font-size: clamp(1.6rem, 4.8vw, 4rem);
     max-width: 100%;
+    text-wrap: balance;
 }
 
-/* === Subtítulo === */
-.hero-subtitle {
-    @apply text-lg md:text-xl font-semibold shiny-text;
-}
+/* === Subtítulo / textos === */
+.hero-subtitle { @apply text-lg md:text-xl font-semibold shiny-text; }
+.hero-services p { @apply text-base md:text-lg mb-2; text-align: center; }
 
-/* === Texto introdutório de serviços === */
-.hero-services p {
-    @apply text-base md:text-lg mb-2;
-    text-align: center;
-}
-
-/* === Lista de serviços === */
 .hero-service-list {
     @apply text-white text-base md:text-lg space-y-1;
     list-style-type: disc;
@@ -96,96 +62,176 @@
     text-align: center;
 }
 
-/* === Botão === */
-.hero-btn-container {
-    @apply mt-6 flex justify-center;
-}
-
+.hero-btn-container { @apply mt-6 flex justify-center; }
 .hero-btn {
-    @apply bg-[#b2c4fd] text-white px-6 py-3 rounded-xl shadow-lg text-base md:text-lg font-semibold hover:bg-[#3a385d] transition;
+    @apply bg-[#d58d9f] text-white px-6 py-3 rounded-xl shadow-lg text-base md:text-lg font-semibold hover:bg-[#b2677c] transition;
 }
-
-/* === Meta final === */
-.hero-goal {
-    @apply text-base md:text-lg font-medium mt-6 shiny-text text-center;
-}
+.hero-goal { @apply text-base md:text-lg font-medium mt-6 shiny-text text-center; }
 
 /* === Brilho animado === */
-.shiny-text {
-    background: linear-gradient(90deg, #ffffff 0%, #a2b6ff 50%, #ffffff 100%);
+.shiny-text{
+    background: linear-gradient(90deg, #ffffff 0%, #b2c4fd 50%, #ffffff 100%);
     background-size: 200% auto;
-    background-clip: text;
-    -webkit-background-clip: text;
+    background-clip: text; -webkit-background-clip: text;
     color: transparent;
     animation: shine 8s linear infinite;
 }
+@keyframes shine { 0%{background-position:200% center;} 100%{background-position:-200% center;} }
 
-@keyframes shine {
-    0% { background-position: 200% center; }
-    100% { background-position: -200% center; }
-}
+/* =========================================================
+   MOBILE/TABLET
+   ========================================================= */
 
-/* === Responsividade específica === */
-@media (max-width: 768px) {
-    .hero-text {
-        padding: 1rem 1.5rem;
-        margin-left: var(--safe-left);
-        max-width: calc(100vw - var(--safe-left) - 1.5rem);
+/* ===== Até 1050px: ativa fundo roxo, ondas e centralização base ===== */
+@media (max-width: 1050px) {
+    .hero{
+        height: 100svh;
+        background: #3a385d;
+        background-image: none !important;
+        position: relative; overflow: hidden; z-index: 60;
     }
 
-    .hero-title {
-        font-size: clamp(1.25rem, 6vw, 2.25rem);
-        /* Continua sem quebrar; o JS reduz se necessário */
-        white-space: nowrap;
+    /* ONDA ROSA + BORDA BRANCA (sem quebra) — mantém efeito */
+    .hero-waves{
+        position:absolute; top:0; left:-12%; width:224%; height:46vh;
+        transform: translateY(-6%); pointer-events:none; z-index:1; will-change:transform;
     }
-}
-
-@media (min-width: 769px) {
-    .hero-text {
-        max-width: calc(100vw - var(--safe-left) - 4vw);
-        padding-right: 4vw;
+    .hero-waves .wave{
+        position:absolute; inset:0; width:100%; height:100%;
+        transform: translate3d(0,0,0);
+        animation: waveSlideSoft 26s linear infinite;
     }
-}
-
-/* === Permitir quebra do título a partir de 1960px === */
-@media (max-width: 1960px) {
-    .hero-title {
-        white-space: normal; /* Agora pode quebrar */
-        text-overflow: unset;
-        overflow: visible;
+    .wave-white-edge{ filter: drop-shadow(0 2px 6px rgba(0,0,0,.18)); }
+    @keyframes waveSlideSoft{
+        0%{transform:translate3d(0,0,0);} 50%{transform:translate3d(-12%,0,0);} 100%{transform:translate3d(0,0,0);}
     }
-}
 
-/* === NOVA REGRA: proteção extra contra sobreposição >= 1910px === */
-/* A arte à esquerda cresce; aumentamos a zona segura para evitar invasão. */
-@media (min-width: 1910px) and (max-width: 2995px) {
-    :root {
-        /* Escala com a largura: nunca menos que 520px e nunca mais que 680px */
-        --safe-left: clamp(520px, 27vw, 680px);
+    .hero-overlay{
+        background-color: rgba(0,0,0,.12);
+        display:flex; align-items:center; justify-content:center;
+        position:relative; z-index:2;
     }
-}
 
-@media (min-width: 2996px) {
-    .hero-text {
-        margin-left: auto;            /* ignora a zona segura */
-        margin-right: auto;
-        max-width: 70vw;              /* largura confortável no centro */
+    /* Centralização robusta do bloco de texto */
+    .hero-text{
+        margin: 0 auto;                /* <— remove qualquer empurrão lateral */
+        max-width: 96vw;
+        width: 96vw;
+        padding: 1rem;
         text-align: center;
-        padding-left: 4vw;
-        padding-right: 4vw;
+        position: relative; z-index: 3;
+
+        display:flex; flex-direction:column;
+        align-items:center; justify-content:center;
+        word-break: break-word;
     }
-    .hero-title { text-align: center; }
-    .hero-service-list { text-align: center; list-style-position: inside; }
-    .hero-btn-container { @apply justify-center; }
-    .hero-goal { text-align: center; }
+    .hero-text * { text-align:center; }
+
+    .hero-title{
+        white-space: normal; overflow: visible; text-overflow: unset;
+        font-size: clamp(1.3rem, 7vw, 2.3rem);
+        line-height: 1.22; letter-spacing: .1px; text-wrap: balance; hyphens:auto;
+        max-width: 90%;
+    }
+
+    .hero-subtitle{ font-size: clamp(1rem, 3.8vw, 1.125rem); max-width:90%; }
+    .hero-services p, .hero-service-list, .hero-goal{ font-size: clamp(.95rem, 3.6vw, 1.05rem); }
+
+    .hero-btn-container{ margin-top:1rem; }
+    .hero-btn{ padding:.75rem 1.25rem; border-radius:.9rem; }
+
+    .hero-mobile-brand{
+        position:absolute; top:max(10px, env(safe-area-inset-top)); left:14px; right:14px;
+        display:flex; justify-content:center; z-index:70; pointer-events:none;
+    }
+    .hero-mobile-logo{ height:38px; width:auto; filter:drop-shadow(0 2px 6px rgba(0,0,0,.35)); opacity:.95; }
 }
 
-
-
-/* === Ajuste de fonte para caber entre 2115px e 1910px === */
-@media (max-width: 2115px) and (min-width: 1910px) {
-    .hero-title {
-        font-size: clamp(1.4rem, 4.2vw, 3.4rem); /* levemente menor */
-        white-space: nowrap; /* mantém em uma linha */
+/* ===== FIX CRÍTICO: ≤770px garante centralização (sem safe-left) ===== */
+@media (max-width: 770px) {
+    .hero-text {
+        margin: 0 auto !important;
+        max-width: 94vw !important;
+        width: 94vw !important;
+        padding: 1rem .5rem;
     }
+}
+
+/* ===== Escadinha adicional pra micro telas ===== */
+
+/* ≤640px */
+@media (max-width: 640px){
+    .hero-text{ max-width:95vw; width:95vw; }
+    .hero-title{ font-size: clamp(1.05rem, 7.8vw, 1.75rem); line-height:1.24; }
+}
+
+/* ≤560px */
+@media (max-width: 560px){
+    .hero-title{ font-size: clamp(1rem, 8.2vw, 1.6rem); line-height:1.26; }
+    .hero-btn{ padding:.85rem .9rem; }
+}
+
+/* ≤480px */
+@media (max-width: 480px){
+    .hero-text{ max-width:96vw; width:96vw; }
+    .hero-title{ font-size: clamp(.96rem, 8.8vw, 1.5rem); line-height:1.28; }
+}
+
+/* ≤420px */
+@media (max-width: 420px){
+    .hero-title{ font-size: clamp(.92rem, 9.4vw, 1.42rem); line-height:1.3; }
+}
+
+/* ≤360px */
+@media (max-width: 360px){
+    .hero-text{ max-width:97vw; width:97vw; }
+    .hero-title{ font-size: clamp(.9rem, 10vw, 1.35rem); line-height:1.32; }
+}
+
+/* ≤340px */
+@media (max-width: 340px){
+    .hero-subtitle{ display:none; }
+    .hero-title{ font-size: clamp(.88rem, 10.4vw, 1.28rem); }
+}
+
+/* ≤320px */
+@media (max-width: 320px){
+    .hero-text{ max-width:98vw; width:98vw; padding:.9rem .35rem; }
+    .hero-title{ font-size: clamp(.84rem, 11vw, 1.2rem); line-height:1.34; }
+    .hero-services p{ display:none; }
+    .hero-service-list{ font-size: clamp(.84rem, 4.8vw, .94rem); list-style:none; padding:0; margin:0; }
+}
+
+/* ≤300px */
+@media (max-width: 300px){
+    .hero-title{ font-size: clamp(.8rem, 11.8vw, 1.1rem); line-height:1.36; }
+}
+
+/* ≤270px */
+@media (max-width: 270px){
+    .hero-text{ max-width:99vw; width:99vw; }
+    .hero-title{ font-size: clamp(.76rem, 12.8vw, 1.05rem); line-height:1.38; }
+}
+
+/* === Acessibilidade === */
+@media (prefers-reduced-motion: reduce){ .hero-waves .wave{ animation:none !important; } }
+
+/* === Demais ajustes existentes (desktop) === */
+@media (min-width: 1051px){ .hero-mobile-brand{ display:none; } }
+
+/* REMOVIDO o bloco antigo que reintroduzia margin-left em ≤768px */
+@media (min-width: 769px){
+    .hero-text{ max-width: calc(100vw - var(--safe-left) - 4vw); padding-right:4vw; }
+}
+@media (max-width: 1960px){ .hero-title{ white-space: normal; } }
+@media (min-width: 1910px) and (max-width: 2995px){ :root{ --safe-left: clamp(520px, 27vw, 680px); } }
+@media (min-width: 2996px){
+    .hero-text{ margin-left:auto; margin-right:auto; max-width:70vw; text-align:center; padding-left:4vw; padding-right:4vw; }
+    .hero-title{ text-align:center; }
+    .hero-service-list{ text-align:center; list-style-position: inside; }
+    .hero-btn-container{ @apply justify-center; }
+    .hero-goal{ text-align:center; }
+}
+@media (max-width: 2115px) and (min-width: 1910px){
+    .hero-title{ font-size: clamp(1.4rem, 4.2vw, 3.4rem); white-space: nowrap; }
 }
