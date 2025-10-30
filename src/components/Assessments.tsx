@@ -1,6 +1,6 @@
 "use client";
 
-import {JSX, useEffect, useState } from "react";
+import { JSX, useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import { motion, AnimatePresence } from "framer-motion";
 import "@/styles/assessments.css";
@@ -41,30 +41,13 @@ export default function Assessments() {
                 "Comprehensive evaluations of emotional, behavioral, and mental health concerns to guide therapeutic interventions",
             details: (
                 <div className="space-y-3 text-neutral-200/90 bg-2e2c4a">
-                    <p className="font-semibold text-[#d58d9f]">
-                        The conditions assessed include, but are not limited to:
-                    </p>
+                    <p className="font-semibold text-[#d58d9f]">The conditions assessed include, but are not limited to:</p>
                     <ul className="list-disc ml-5 space-y-2">
-                        <li>
-                            <strong>Autism Spectrum Disorders (ASD):</strong> Understanding social communication,
-                            behavior, and sensory needs.
-                        </li>
-                        <li>
-                            <strong>Anxiety Disorders:</strong> Generalized anxiety, social anxiety, phobias, panic
-                            disorders, and separation anxiety.
-                        </li>
-                        <li>
-                            <strong>Depressive & Mood Disorders:</strong> Persistent sadness and mood fluctuations
-                            (e.g., DMDD).
-                        </li>
-                        <li>
-                            <strong>Disruptive Behavior & Regulation Disorders:</strong> Emotional/behavioral
-                            control challenges (ODD, Conduct Disorder).
-                        </li>
-                        <li>
-                            <strong>Other Childhood & Adolescent Challenges:</strong> School refusal and behavioral
-                            issues affecting learning and social functioning.
-                        </li>
+                        <li><strong>Autism Spectrum Disorders (ASD):</strong> Understanding social communication, behavior, and sensory needs.</li>
+                        <li><strong>Anxiety Disorders:</strong> Generalized anxiety, social anxiety, phobias, panic disorders, and separation anxiety.</li>
+                        <li><strong>Depressive & Mood Disorders:</strong> Persistent sadness and mood fluctuations (e.g., DMDD).</li>
+                        <li><strong>Disruptive Behavior & Regulation Disorders:</strong> Emotional/behavioral control challenges (ODD, Conduct Disorder).</li>
+                        <li><strong>Other Childhood & Adolescent Challenges:</strong> School refusal and behavioral issues affecting learning and social functioning.</li>
                     </ul>
                 </div>
             ),
@@ -137,15 +120,17 @@ export default function Assessments() {
                                         <motion.div
                                             layout
                                             transition={{ duration: 0.35, ease }}
-                                            className={`flex items-start gap-x-6 sm:gap-x-8 rounded-2xl px-2 sm:px-3 py-2 sm:py-3
-                                  ring-1 ring-white/5 hover:ring-white/15
-                                  ${isOpen ? "bg-white/5" : "bg-transparent"}`}
+                                            /* ADICIONADO: classe para controlar no mobile */
+                                            className={`assessments-item flex items-start gap-x-6 sm:gap-x-8 rounded-2xl px-2 sm:px-3 py-2 sm:py-3
+                        ring-1 ring-white/5 hover:ring-white/15
+                        ${isOpen ? "bg-white/5" : "bg-transparent"}`}
                                         >
                                             {/* Ícone */}
                                             <div
-                                                className="shrink-0 mt-1 rounded-2xl ring-1 ring-white/10 p-2 sm:p-3
-                                   w-18 h-18 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32
-                                   flex items-center justify-center"
+                                                /* ADICIONADO: classe para media query */
+                                                className="assessments-icon shrink-0 mt-1 rounded-2xl ring-1 ring-white/10 p-2 sm:p-3
+                          w-18 h-18 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32
+                          flex items-center justify-center"
                                             >
                                                 {animationData ? (
                                                     <Lottie animationData={animationData} loop style={{ width: "100%", height: "100%" }} />
@@ -159,7 +144,7 @@ export default function Assessments() {
                                                 <div className="flex items-baseline justify-between gap-3">
                                                     <h3
                                                         className={`font-semibold text-white ${notoSans.className}
-                                        text-xl sm:text-2xl md:text-3xl`}
+                              text-xl sm:text-2xl md:text-3xl`}
                                                     >
                                                         {item.title}
                                                     </h3>
@@ -168,7 +153,7 @@ export default function Assessments() {
                                                         initial={false}
                                                         animate={{ rotate: isOpen ? 90 : 0 }}
                                                         transition={{ duration: 0.3, ease }}
-                                                        className="text-neutral-300 text-xl sm:text-2xl"
+                                                        className="arrow-indicator text-neutral-300 text-xl sm:text-2xl"
                                                         aria-hidden
                                                     >
                                                         →

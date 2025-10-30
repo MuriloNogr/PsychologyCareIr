@@ -1,24 +1,92 @@
 @import "./tailwind.css";
 
-/* Seção geral */
+/* ================= Base ================= */
 .assessments-section {
     @apply text-white;
 }
 
 #assessments {
-    scroll-margin-top: 50vh; /* Ajusta a posição para o meio da tela */
+    scroll-margin-top: 50vh; /* ancora mais ao centro */
 }
 
-
-/* Título grande */
 .assessments-title {
     @apply text-4xl sm:text-5xl md:text-6xl font-bold mb-10 mt-2;
 }
 
-/* Nota/CTA */
-.note-container { @apply mt-12; }
-.note-text { @apply text-center; }
-.note-highlight {
+/* Nota/CTA — corrigido para usar as classes *1 do TSX */
+.note-container1 { @apply mt-12; }
+.note-text1 { @apply text-center; }
+.note-highlight1 {
     @apply inline-block rounded-2xl px-6 py-5 text-base sm:text-lg md:text-xl text-white/90
     ring-1 ring-white/10 bg-white/5 backdrop-blur-sm;
+}
+
+/* ================= Mobile: ≤ 663px ================= */
+@media (max-width: 663px) {
+
+    /* Título menor e com menos margem para evitar quebra */
+    .assessments-title {
+        font-size: 1.9rem;           /* ~text-3xl */
+        line-height: 1.2;
+        margin-bottom: 1.25rem;
+        margin-top: .25rem;
+    }
+
+    /* Cada card vira coluna, ícone em cima e paddings reduzidos */
+    .assessments-item {
+        flex-direction: column;      /* ícone acima do texto */
+        align-items: stretch;
+        gap: .75rem;                 /* ~gap-3 */
+        padding: .75rem .5rem;       /* ~py-3 px-2 */
+    }
+
+    /* Ícone mais compacto e centralizado */
+    .assessments-icon {
+        width: 92px;
+        height: 92px;
+        margin: 0 auto .25rem auto;  /* centraliza no topo do card */
+        padding: .5rem;
+    }
+
+    /* Título e seta menores para caber em 1 linha */
+    .assessments-item h3 {
+        font-size: 1.125rem;         /* ~text-lg */
+        line-height: 1.25;
+    }
+
+    .assessments-item .arrow-indicator {
+        font-size: 1.25rem;          /* ~text-xl */
+    }
+
+    /* Texto/descrição com fonte menor e altura de linha confortável */
+    .assessments-item p,
+    .assessments-item .text-neutral-300 {
+        font-size: .98rem;           /* entre sm e base */
+        line-height: 1.55;
+    }
+
+    /* Listas internas com menos recuo e espaçamento menor */
+    .assessments-item ul {
+        margin-left: 1rem;           /* ~ml-4 */
+    }
+    .assessments-item ul > li {
+        margin-top: .35rem;
+        margin-bottom: .35rem;
+    }
+
+    /* Espaço vertical entre cards um pouco menor */
+    .assessments-section .space-y-8 > :where(* + *) {
+        margin-top: 1.25rem;         /* ~space-y-5 */
+    }
+
+    /* Ancora de rolagem menos agressiva em telas curtas */
+    #assessments {
+        scroll-margin-top: 35vh;
+    }
+
+    /* Nota/CTA mais enxuta */
+    .note-highlight1 {
+        font-size: .95rem;
+        padding: .75rem .9rem;
+    }
 }
