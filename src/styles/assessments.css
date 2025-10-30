@@ -1,19 +1,14 @@
 @import "./tailwind.css";
 
 /* ================= Base ================= */
-.assessments-section {
-    @apply text-white;
-}
-
-#assessments {
-    scroll-margin-top: 50vh; /* ancora mais ao centro */
-}
+.assessments-section { @apply text-white; }
+#assessments { scroll-margin-top: 50vh; }
 
 .assessments-title {
     @apply text-4xl sm:text-5xl md:text-6xl font-bold mb-10 mt-2;
 }
 
-/* Nota/CTA — corrigido para usar as classes *1 do TSX */
+/* Nota / CTA */
 .note-container1 { @apply mt-12; }
 .note-text1 { @apply text-center; }
 .note-highlight1 {
@@ -21,72 +16,141 @@
     ring-1 ring-white/10 bg-white/5 backdrop-blur-sm;
 }
 
-/* ================= Mobile: ≤ 663px ================= */
-@media (max-width: 663px) {
+/* ================= Tema ================= */
+:root {
+    --dark: #3a385d;
+    --pink: #d58d9f;
+    --soft: #b2c4fd;
+    --burn: #b2677c;
+}
 
-    /* Título menor e com menos margem para evitar quebra */
+/* ================= Cards ================= */
+.assessments-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    border-radius: 1rem;
+    padding: 1rem .9rem;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 10px 24px rgba(0,0,0,.22);
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+.assessments-item:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,.05);
+    border-color: rgba(255,255,255,.12);
+    box-shadow: 0 14px 28px rgba(0,0,0,.26);
+}
+.assessments-item.is-open {
+    background: rgba(255,255,255,.06);
+    border-color: rgba(255,255,255,.16);
+}
+
+/* Cabeçalho e título */
+.assessments-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .5rem;
+}
+.assessments-h3 {
+    @apply font-semibold text-white;
+    font-size: clamp(1.125rem, 1.05rem + .6vw, 1.875rem);
+}
+
+/* Descrição */
+.assessments-desc {
+    color: rgba(255,255,255,.85);
+    font-size: clamp(1rem, .96rem + .2vw, 1.125rem);
+    line-height: 1.6;
+    margin-top: .4rem;
+}
+
+/* Ícone Lottie (desktop: tamanho fixo e igual para todos) */
+.assessments-icon {
+    box-sizing: border-box;
+    border-radius: 1rem;
+    width: 112px;
+    height: 112px;
+    flex: 0 0 112px;
+    padding: .6rem;
+    background: rgba(255,255,255,.05);
+    box-shadow:
+            inset 0 0 0 1px rgba(255,255,255,.08),
+            0 6px 16px rgba(0,0,0,.25);
+}
+
+/* Botão seta */
+.assessments-arrowbtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,.06);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.12);
+    color: rgba(255,255,255,.9);
+    transition: background .2s ease, transform .2s ease;
+}
+.assessments-arrowbtn:hover {
+    background: rgba(255,255,255,.12);
+    transform: translateY(-1px);
+}
+
+/* ================= Mobile ≤ 663px ================= */
+@media (max-width: 663px) {
     .assessments-title {
-        font-size: 1.9rem;           /* ~text-3xl */
+        font-size: 1.9rem;
         line-height: 1.2;
-        margin-bottom: 1.25rem;
+        margin-bottom: 1rem;
         margin-top: .25rem;
     }
 
-    /* Cada card vira coluna, ícone em cima e paddings reduzidos */
     .assessments-item {
-        flex-direction: column;      /* ícone acima do texto */
-        align-items: stretch;
-        gap: .75rem;                 /* ~gap-3 */
-        padding: .75rem .5rem;       /* ~py-3 px-2 */
+        flex-direction: column;
+        gap: .9rem;
+        padding: 1rem .9rem;
     }
 
-    /* Ícone mais compacto e centralizado */
     .assessments-icon {
-        width: 92px;
-        height: 92px;
-        margin: 0 auto .25rem auto;  /* centraliza no topo do card */
-        padding: .5rem;
+        width: 120px;
+        height: 120px;
+        flex: 0 0 120px;
+        margin: .1rem auto .35rem auto;
+        padding: .55rem;
     }
 
-    /* Título e seta menores para caber em 1 linha */
-    .assessments-item h3 {
-        font-size: 1.125rem;         /* ~text-lg */
+    .assessments-head {
+        align-items: center;
+    }
+    .assessments-h3 {
+        font-size: 1.15rem;
         line-height: 1.25;
     }
-
-    .assessments-item .arrow-indicator {
-        font-size: 1.25rem;          /* ~text-xl */
+    .assessments-arrowbtn {
+        width: 2.6rem;
+        height: 2.6rem;
+        font-size: 1.05rem;
     }
 
-    /* Texto/descrição com fonte menor e altura de linha confortável */
-    .assessments-item p,
-    .assessments-item .text-neutral-300 {
-        font-size: .98rem;           /* entre sm e base */
+    .assessments-desc {
+        font-size: .98rem;
         line-height: 1.55;
+        color: rgba(255,255,255,.88);
     }
 
-    /* Listas internas com menos recuo e espaçamento menor */
-    .assessments-item ul {
-        margin-left: 1rem;           /* ~ml-4 */
-    }
-    .assessments-item ul > li {
-        margin-top: .35rem;
-        margin-bottom: .35rem;
-    }
+    .assessments-item ul { margin-left: 1rem; }
+    .assessments-item ul > li { margin: .32rem 0; }
 
-    /* Espaço vertical entre cards um pouco menor */
-    .assessments-section .space-y-8 > :where(* + *) {
-        margin-top: 1.25rem;         /* ~space-y-5 */
-    }
+    .assessments-section .space-y-8 > :where(* + *) { margin-top: 1.15rem; }
 
-    /* Ancora de rolagem menos agressiva em telas curtas */
-    #assessments {
-        scroll-margin-top: 35vh;
-    }
+    #assessments { scroll-margin-top: 35vh; }
 
-    /* Nota/CTA mais enxuta */
     .note-highlight1 {
         font-size: .95rem;
         padding: .75rem .9rem;
     }
 }
+
