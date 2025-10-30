@@ -114,6 +114,7 @@ export default function Assessments() {
 
                             return (
                                 <div key={item.title} className="group">
+                                    {/* Card é um único botão — NADA de botão dentro */}
                                     <button
                                         onClick={() => setOpenIndex(isOpen ? null : idx)}
                                         aria-expanded={isOpen}
@@ -138,16 +139,16 @@ export default function Assessments() {
                                                 <div className="assessments-head">
                                                     <h3 className={`assessments-h3 ${notoSans.className}`}>{item.title}</h3>
 
-                                                    <motion.button
-                                                        type="button"
-                                                        aria-label={isOpen ? "Collapse section" : "Expand section"}
+                                                    {/* Seta agora é SPAN para evitar nested button */}
+                                                    <motion.span
+                                                        aria-hidden
                                                         initial={false}
                                                         animate={{ rotate: isOpen ? 90 : 0 }}
                                                         transition={{ duration: 0.3, ease }}
                                                         className="assessments-arrowbtn"
                                                     >
                                                         →
-                                                    </motion.button>
+                                                    </motion.span>
                                                 </div>
 
                                                 <p className="assessments-desc">{item.description}</p>

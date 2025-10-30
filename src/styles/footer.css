@@ -1,11 +1,19 @@
 @import "./tailwind.css";
 
-
+/* ===== FOOTER BASE ===== */
 .footer {
-    @apply bg-gradient-to-r from-[#D58D9F] to-[#B2677C] py-4 shadow-md;
-    @apply relative w-full h-[300] flex items-center;
+    @apply relative w-full min-h-[300px];
     background: url('/footerbg.jpeg') center/cover no-repeat;
-    background-size: cover;  /* 🔹 Certifique-se que o fundo cobre o elemento */
-    background-position: center;
-    background-repeat: no-repeat; /* 🔹 Evita a repetição da imagem */
+}
+
+/* ===== LINKS ===== */
+.footer-link {
+    @apply inline-flex gap-x-2 text-white/80 hover:text-white focus:outline-none focus:text-white transition-colors duration-200;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 640px) {
+    .footer {
+        @apply py-8;
+    }
 }

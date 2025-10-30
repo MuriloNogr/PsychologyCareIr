@@ -81,20 +81,17 @@
             0 6px 16px rgba(0,0,0,.25);
 }
 
-/* Botão seta */
-.assessments-arrowbtn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
+/* “Seta” é um span estilizado (não é botão para evitar nested button) */
+.assessments-arrowbtn{
+    display:inline-flex; align-items:center; justify-content:center;
+    width: 2.25rem; height: 2.25rem;
     border-radius: 999px;
     background: rgba(255,255,255,.06);
     box-shadow: inset 0 0 0 1px rgba(255,255,255,.12);
     color: rgba(255,255,255,.9);
     transition: background .2s ease, transform .2s ease;
 }
-.assessments-arrowbtn:hover {
+.assessments-item:hover .assessments-arrowbtn{
     background: rgba(255,255,255,.12);
     transform: translateY(-1px);
 }
@@ -122,18 +119,8 @@
         padding: .55rem;
     }
 
-    .assessments-head {
-        align-items: center;
-    }
-    .assessments-h3 {
-        font-size: 1.15rem;
-        line-height: 1.25;
-    }
-    .assessments-arrowbtn {
-        width: 2.6rem;
-        height: 2.6rem;
-        font-size: 1.05rem;
-    }
+    .assessments-head { align-items: center; }
+    .assessments-h3 { font-size: 1.15rem; line-height: 1.25; }
 
     .assessments-desc {
         font-size: .98rem;
@@ -148,9 +135,5 @@
 
     #assessments { scroll-margin-top: 35vh; }
 
-    .note-highlight1 {
-        font-size: .95rem;
-        padding: .75rem .9rem;
-    }
+    .note-highlight1 { font-size: .95rem; padding: .75rem .9rem; }
 }
-
