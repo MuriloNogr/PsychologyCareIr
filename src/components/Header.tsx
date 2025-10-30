@@ -41,7 +41,7 @@ const Header = () => {
             <div className="header-container">
                 <Link href="/" className="logo" aria-label="Home">
                     <Image
-                        src="/MidwestLogo.png"
+                        src="/logo.png"
                         alt="Psychology Care Logo"
                         width={200}
                         height={60}
@@ -150,7 +150,7 @@ const Header = () => {
             >
                 <div className="header-drawer-header">
                     <Image
-                        src="/MidwestLogo.png"
+                        src="/logo.png"
                         alt="Psychology Care Logo"
                         width={160}
                         height={48}

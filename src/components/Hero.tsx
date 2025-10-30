@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import Image from "next/image";
 import "@/styles/hero.css";
 
 const clamp = (n: number, a: number, b: number) => Math.max(a, Math.min(n, b));
@@ -76,12 +77,13 @@ const Hero = () => {
 
             {/* Logo no topo em mobile/tablet */}
             <div className="hero-mobile-brand">
-                <img
-                    src="/midwest-logo.png"
+                <Image
+                    src="/logo.png"
                     alt="Midwest Psychological Assessments logo"
                     className="hero-mobile-logo"
                     width={160}
                     height={42}
+                    priority
                 />
             </div>
 
