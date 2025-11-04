@@ -1,3 +1,4 @@
+/* styles/hero.css */
 @import "./tailwind.css";
 
 /* === Seção principal com fundo (desktop) === */
@@ -81,8 +82,6 @@
 /* =========================================================
    MOBILE/TABLET
    ========================================================= */
-
-/* ===== Até 1050px: ativa fundo roxo, ondas e centralização base ===== */
 @media (max-width: 1050px) {
     .hero{
         height: 100svh;
@@ -91,7 +90,6 @@
         position: relative; overflow: hidden; z-index: 60;
     }
 
-    /* ONDA ROSA + BORDA BRANCA (sem quebra) — mantém efeito */
     .hero-waves{
         position:absolute; top:0; left:-12%; width:224%; height:46vh;
         transform: translateY(-6%); pointer-events:none; z-index:1; will-change:transform;
@@ -112,9 +110,8 @@
         position:relative; z-index:2;
     }
 
-    /* Centralização robusta do bloco de texto */
     .hero-text{
-        margin: 0 auto;                /* <— remove qualquer empurrão lateral */
+        margin: 0 auto;
         max-width: 96vw;
         width: 96vw;
         padding: 1rem;
@@ -147,7 +144,6 @@
     .hero-mobile-logo{ height:38px; width:auto; filter:drop-shadow(0 2px 6px rgba(0,0,0,.35)); opacity:.95; }
 }
 
-/* ===== FIX CRÍTICO: ≤770px garante centralização (sem safe-left) ===== */
 @media (max-width: 770px) {
     .hero-text {
         margin: 0 auto !important;
@@ -157,69 +153,49 @@
     }
 }
 
-/* ===== Escadinha adicional pra micro telas ===== */
-
-/* ≤640px */
+/* escadinhas */
 @media (max-width: 640px){
     .hero-text{ max-width:95vw; width:95vw; }
     .hero-title{ font-size: clamp(1.05rem, 7.8vw, 1.75rem); line-height:1.24; }
 }
-
-/* ≤560px */
 @media (max-width: 560px){
     .hero-title{ font-size: clamp(1rem, 8.2vw, 1.6rem); line-height:1.26; }
     .hero-btn{ padding:.85rem .9rem; }
 }
-
-/* ≤480px */
 @media (max-width: 480px){
     .hero-text{ max-width:96vw; width:96vw; }
     .hero-title{ font-size: clamp(.96rem, 8.8vw, 1.5rem); line-height:1.28; }
 }
-
-/* ≤420px */
 @media (max-width: 420px){
     .hero-title{ font-size: clamp(.92rem, 9.4vw, 1.42rem); line-height:1.3; }
 }
-
-/* ≤360px */
 @media (max-width: 360px){
     .hero-text{ max-width:97vw; width:97vw; }
     .hero-title{ font-size: clamp(.9rem, 10vw, 1.35rem); line-height:1.32; }
 }
-
-/* ≤340px */
 @media (max-width: 340px){
     .hero-subtitle{ display:none; }
     .hero-title{ font-size: clamp(.88rem, 10.4vw, 1.28rem); }
 }
-
-/* ≤320px */
 @media (max-width: 320px){
     .hero-text{ max-width:98vw; width:98vw; padding:.9rem .35rem; }
     .hero-title{ font-size: clamp(.84rem, 11vw, 1.2rem); line-height:1.34; }
     .hero-services p{ display:none; }
     .hero-service-list{ font-size: clamp(.84rem, 4.8vw, .94rem); list-style:none; padding:0; margin:0; }
 }
-
-/* ≤300px */
 @media (max-width: 300px){
     .hero-title{ font-size: clamp(.8rem, 11.8vw, 1.1rem); line-height:1.36; }
 }
-
-/* ≤270px */
 @media (max-width: 270px){
     .hero-text{ max-width:99vw; width:99vw; }
     .hero-title{ font-size: clamp(.76rem, 12.8vw, 1.05rem); line-height:1.38; }
 }
 
-/* === Acessibilidade === */
+/* acessibilidade */
 @media (prefers-reduced-motion: reduce){ .hero-waves .wave{ animation:none !important; } }
 
-/* === Demais ajustes existentes (desktop) === */
+/* desktop extras */
 @media (min-width: 1051px){ .hero-mobile-brand{ display:none; } }
-
-/* REMOVIDO o bloco antigo que reintroduzia margin-left em ≤768px */
 @media (min-width: 769px){
     .hero-text{ max-width: calc(100vw - var(--safe-left) - 4vw); padding-right:4vw; }
 }
@@ -234,4 +210,15 @@
 }
 @media (max-width: 2115px) and (min-width: 1910px){
     .hero-title{ font-size: clamp(1.4rem, 4.2vw, 3.4rem); white-space: nowrap; }
+}
+
+/* ===== EDGE FIXES (ativadas só quando .edge-fix está no <section>) ===== */
+.edge-fix .hero-text { padding-right: 4px; }
+.edge-fix .hero-title {
+    overflow: visible;
+    text-overflow: clip;
+    letter-spacing: 0.01px;
+}
+@media (min-width: 1051px) {
+    .edge-fix .hero-title { white-space: normal !important; }
 }

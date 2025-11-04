@@ -1,3 +1,4 @@
+// app/components/Hero.tsx
 "use client";
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
@@ -8,10 +9,15 @@ const clamp = (n: number, a: number, b: number) => Math.max(a, Math.min(n, b));
 
 const Hero = () => {
     const [isVisible, setIsVisible] = useState(false);
+    const [edgeClass, setEdgeClass] = useState<string>(""); // evita hydration mismatch
     const titleRef = useRef<HTMLHeadingElement | null>(null);
     const containerRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
+        // Detecta Edge só no cliente e aplica a classe após o mount
+        if (typeof navigator !== "undefined" && /Edg\//.test(navigator.userAgent)) {
+            setEdgeClass("edge-fix");
+        }
         const t = setTimeout(() => setIsVisible(true), 200);
         return () => clearTimeout(t);
     }, []);
@@ -28,31 +34,53 @@ const Hero = () => {
                 return;
             }
 
-            const avail = c.clientWidth;
-            const cs = window.getComputedStyle(t);
-            const lh = parseFloat(cs.lineHeight || "0");
-            let fs = parseFloat(cs.fontSize || "32");
+            const csT = window.getComputedStyle(t);
+            const csC = window.getComputedStyle(c);
+
+            // largura útil = clientWidth - paddings horizontais
+            const padX =
+                parseFloat(csC.paddingLeft || "0") + parseFloat(csC.paddingRight || "0");
+            const avail = c.clientWidth - padX;
+
+            // line-height seguro (trata "normal")
+            let lh = parseFloat(csT.lineHeight || "");
+            if (Number.isNaN(lh)) {
+                const fsPx = parseFloat(csT.fontSize || "16");
+                lh = fsPx * 1.2;
+            }
+
+            let fs = parseFloat(csT.fontSize || "32");
             const MIN = 18, MAX = 64;
             fs = clamp(fs, MIN, MAX);
 
-            const fits = () => t.scrollWidth <= avail && t.clientHeight <= lh * 1.25;
+            // margem extra só para o Edge (código roda apenas no cliente)
+            const isEdge = /Edg\//.test(navigator.userAgent);
+            const EPS = isEdge ? 3 : 1;
 
+            const fits = () => {
+                const rect = t.getBoundingClientRect();
+                return rect.width <= (avail - EPS) && t.clientHeight <= lh * 1.25;
+            };
+
+            // cresce até onde couber
             while (fs < MAX) {
                 t.style.fontSize = `${fs + 1}px`;
                 if (!fits()) { t.style.fontSize = `${fs}px`; break; }
                 fs += 1;
             }
+            // ou reduz se ainda não couber
             while (!fits() && fs > MIN) {
                 fs -= 1; t.style.fontSize = `${fs}px`;
             }
         };
+
         fit();
         window.addEventListener("resize", fit);
         return () => window.removeEventListener("resize", fit);
     }, [isVisible]);
 
     return (
-        <section id="hero" className="hero">
+        <section id="hero" className={`hero ${edgeClass}`}>
             {/* ONDAS no topo — ativas no mobile via CSS */}
             <div className="hero-waves" aria-hidden="true">
                 {/* SHAPE ROSA (sem stroke) */}
@@ -88,10 +116,7 @@ const Hero = () => {
             </div>
 
             <div className="hero-overlay">
-                <div
-                    ref={containerRef}
-                    className={`hero-text ${isVisible ? "fade-in" : ""}`}
-                >
+                <div ref={containerRef} className={`hero-text ${isVisible ? "fade-in" : ""}`}>
                     <h1 ref={titleRef} className="hero-title">
                         Midwest Psychological Assessments
                     </h1>
